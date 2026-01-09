@@ -5,7 +5,7 @@ description: >-
     Worksheet 2: "Benchmarking & NumPy"
 active_tab: homework
 parent: Assignments
-nav_order: 6
+nav_order: 3
 nav_exclude: false
 search_exclude: false
 ---

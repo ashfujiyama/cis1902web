@@ -172,15 +172,10 @@ Finally, we'd like to get to know everyone in the course a little better. In the
 
 Now that we're done with everything, let's submit this worksheet to Gradescope to get a feel of the submission process. Navigate to the [Worksheet 0 Gradescope assignment](https://www.gradescope.com/courses/), and upload your `ws0.py` submission.
 
-You will then see the autograder process your file, which should give you full credit for your implemented `hello()` function:
-
-{:.centered.imgmax}
-![](../ws0_screenshot.png)
-
-Both homework and worksheets will be autograded whenever possible this semester, so be sure to reach out on Piazza if you have any issues with this submission. One common gotcha is that the file name must remain the same as we give it to you, so that the autograder knows which file to look for.
+Both homework and worksheets will be autograded whenever possible this semester, so be sure to reach out on Ed if you have any issues with this submission. One common gotcha is that the file name must remain the same as we give it to you, so that the autograder knows which file to look for.
 
 {: .note }
-On assignmen ts going forward, sometimes functions will be dependent on other functions in their implementation. Since assignments are autograded, it is important that you do not change the names of functions in the starter files we provide you unless instructed to do so.
+On assignments going forward, sometimes functions will be dependent on other functions in their implementation. Since assignments are autograded, it is important that you do not change the names of functions in the starter files we provide you unless instructed to do so.
 
 That's it, worksheet 0 complete!
 
