@@ -1,27 +1,37 @@
-<meta charset="utf-8">
-**CIS 1902 Worksheet 2: FP and List Comprehension 📋**
-<center><big>**Due Wed 2/1 11:59 pm EST**</big></center>
+---
+layout: page
+title: WS1 "FP and List Comprehension"
+description: >-
+    Worksheet 1: "FP and List Comprehension"
+active_tab: homework
+parent: Assignments
+nav_order: 3
+nav_exclude: false
+search_exclude: false
+---
 
-(#) Objectives
+Worksheet 1: FP and List Comprehension 📋
+=============================================================
+## Objectives
 
 - Introduce functional programming methods `map()`, `zip()`, `filter()`
 - Explore nested list comprehensions
 
-(#) Starter files
+## Starter files
 
-- [ws2.py](ws2.py)
+- [ws1.py](ws1.py)
 
 
-!!! Tip
+{: .note }
    As this worksheet introduces some concepts that we did not directly talk about in class,
    please do not spend too much time on it. If you get stuck and are unable to implement the functions
    within ~2 hours or so, you can submit what you have on Gradescope and it will be still given full credit.
 
-(#) Map, filter, zip
+## Map, filter, zip
 
 Python, having functional programming components, has built-in functions `zip()`, `map()`, and `reduce()`. Let's take a look at the help messages for these functions:
 
-~~~~~~~~~~~python
+```python
 >>> help(zip)
 class zip(object)
  |  zip(*iterables) --> zip object
@@ -31,11 +41,11 @@ class zip(object)
  |  method continues until the shortest iterable in the argument sequence
  |  is exhausted and then it raises StopIteration.
  |  ...
-~~~~~~~~~~~
+```
 
 `zip()` takes a tuple unpacked set of iterable argument(s), creating an iterable `zip` object that yields tuples of the i-th element from each of the provided iterables. Zip gives us arguably the most pythonic way of iterating over two lists:
 
-~~~~~~~~~~~python
+```python
 >>> ranks = ["J", "Q", "K", "A"]
 >>> suits = ["hearts", "spades", "clubs", "diamonds"]
 >>> for rank, suit in zip(ranks, suits):
@@ -45,11 +55,11 @@ J hearts
 Q spades
 K clubs
 A diamonds
-~~~~~~~~~~~
+```
 
 Now let's look at map:
 
-~~~~~~~~~~~python
+```python
 >>> help(map)
 Help on class map in module builtins:
 
@@ -59,21 +69,21 @@ class map(object)
  |  Make an iterator that computes the function using arguments from
  |  each of the iterables.  Stops when the shortest iterable is exhausted.
  |  ...
-~~~~~~~~~~~
+```
 
 We see it takes as the first argument a function, and unpacked iterable argument(s). It then returns a map object that can be iterated over with the function being applied to each individual value. Note that we can provide *multiple* iterables to the map function, so that functions that take multiple arguments can be used:
 
-~~~~~~~~~~~python
+```python
 # take the pairwise minimum between two lists
 >>> a = [2,4,6,8]
 >>> b = [1,5,3,7]
 >>> list(map(min, a, b))
 [1, 4, 3, 7]
-~~~~~~~~~~~
+```
 
 Similarly, for `filter()`:
 
-~~~~~~~~~~~python
+```python
 >>> help(filter)
 Help on class filter in module builtins:
 
@@ -83,13 +93,13 @@ class filter(object)
  |  Return an iterator yielding those items of iterable for which function(item)
  |  is true. If function is None, return the items that are true.
  |  ...
-~~~~~~~~~~~
+```
 
 These functions can be used to reproduce the same behavior as list comprehensions. Say we're trying to compute the squares of only even numbers in a given list, similar to what we saw in class.
 
 We can use a for loop:
 
-~~~~~~~~~~~~~~~ python
+``` python
 # not concise, but is readable
 >>> nums = [1,2,3,4,6,7,9,10]
 >>> even_squares = []
@@ -99,44 +109,42 @@ We can use a for loop:
 ...
 >>> print(even_squares)
 [4, 16, 36, 100]
-~~~~~~~~~~~~~~~
+```
 
 A combination of `map()` and `filter()`, where `lambda` indicates an *anonymous function*:
 
-~~~~~~~~~~~~~~~ python
+``` python
 # a one-liner, but a bit of a mess
 >>> even_squares = list(map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, nums)))
 >>> print(even_squares)
 [4, 16, 36, 100]
-~~~~~~~~~~~~~~~
+```
 
-!!!
-    **Note:** Anonymous functions are simple functions restricted to a single expression and can be written in one line, or even within another statement. For example, the squaring anonymous function `lambda x: x ** 2` above is equivalent to:
-
-    ~~~~~~~~~ python
+{: .note }
+    Anonymous functions are simple functions restricted to a single expression and can be written in one line, or even within another statement. For example, the squaring anonymous function `lambda x: x ** 2` above is equivalent to:
+    ``` python
     def square(x):
         return x ** 2
-    ~~~~~~~~~
-
+    ```
     We'll talk more about anonymous functions and their use cases next lecture.
 
 
 Or a list comprehension:
 
-~~~~~~~~~~~~~~~ python
+```python
 # better!
 >>> even_squares = [x ** 2 for x in nums if x % 2 == 0]
 >>> print(even_squares)
 [4, 16, 36, 100]
-~~~~~~~~~~~~~~~
+```
 
 Here we see that the `map()/filter()` implementation is a bit clunky. In fact, Guido van Rossum, the creator of Python, [is of the opinion](https://www.artima.com/weblogs/viewpost.jsp?thread=98196) that `map()` and `filter()` should be phased out in favor of comprehensions. However, there are still situations where these functions may be useful.
 
-(##) Task 1: Matrix transpose [0.5 points]
+### Task 1: Matrix transpose [0.5 points]
 
 Let's implement a matrix `transpose()` function, where we represent square 2D matrices with a list of lists:
 
-~~~~~~~~~~~~~~~~~~~~~ python
+```python
 # a 3x3 matrix
 >>> mat = [[1, 2, 3],
 ...        [4, 5, 6],
@@ -146,26 +154,26 @@ Let's implement a matrix `transpose()` function, where we represent square 2D ma
 >>> mat_T = [[1, 4, 7],
 ...          [2, 5, 8],
 ...          [3, 6, 9]]
-~~~~~~~~~~~~~~~~~~~~~
+```
 
 Formally, for a square matrix $A$, $A^T$ is defined such that for each element, $A^T_{ij} = A_{ji}$. This can easily be done with a nested for loop but we encourage you to think about how you can use `map` and `zip` for a more concise implementation.
 
-!!!
-    **Note:** In practice we'll never write any standard matrix operations ourselves, as [NumPy](https://numpy.org/) will likely have a much more performant implementation. We'll work with NumPy when we cover data science and machine learning.
+{. :note }
+In practice we'll never write any standard matrix operations ourselves, as [NumPy](https://numpy.org/) will likely have a much more performant implementation. We'll work with NumPy when we cover data science and machine learning.
 
-(#) Nested list comprehensions
+## Nested list comprehensions
 
 An additional wrinkle in list comprehensions is that they can be nested:
 
-~~~~~~~ python
+```python
 # one-liner to flatten a list of lists (or a matrix)!
 >>> [elem for row in mat for elem in row]
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
-~~~~~~~
+```
 
 The syntax can be harder to read than a single level list comprehension, so think of each additional `for` statement as another level in a typical nested `for` loop:
 
-~~~~~~~ python
+```python
 # the same as above
 >>> for row in mat:
 ...     for elem in row:
@@ -173,18 +181,18 @@ The syntax can be harder to read than a single level list comprehension, so thin
 ...
 >>> l
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
-~~~~~~~
+```
 
 Conditionals can also be nested:
 
-~~~~~~~ python
+```python
 >>> [elem for row in mat if sum(row) < 10 for elem in row if elem % 2 == 0]
 [2]
-~~~~~~~~
+```
 
 The conditionals also are read as if they are applied to the subsequent level of the for loop:
 
-~~~~~~~ python
+```python
 # same as above, getting a bit unwieldy...
 >>> l = []
 >>> for row in mat:
@@ -195,20 +203,20 @@ The conditionals also are read as if they are applied to the subsequent level of
 ...
 >>> l
 [2]
-~~~~~~~
+```
 
-(##) Task 2: Evens and odds [0.5 points]
+### Task 2: Evens and odds [0.5 points]
 
 Let's implement a function called `evens_and_odds()`. It takes an integer $n$ as input, and returns a list of all pairs (represented as tuples) of numbers between $0$ and $n-1$ where the first number is even and the second number is odd:
 
-~~~~~~~~~ python
+``` python
 >>> evens_and_odds(5)
 [(0, 1), (0, 3), (2, 1), (2, 3), (4, 1), (4, 3)]
-~~~~~~~~~
+```
 
 Play with the implementation of this function using comprehensions or standard for loops. What approach do you prefer in terms of code readability?
 
-(#) Task 3: Course feedback [1 point]
+## Task 3: Course feedback [1 point]
 
 In a multi-line comment, please respond to the following questions:
 
@@ -218,6 +226,4 @@ In a multi-line comment, please respond to the following questions:
 
 3. What remaining questions do you have about the topics we have covered in the course so far?
 
-That's it, worksheet 2 complete!
-
-<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+That's it, worksheet 1 complete!

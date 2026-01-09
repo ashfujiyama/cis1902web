@@ -1,9 +1,18 @@
-<meta charset="utf-8">
+---
+layout: page
+title: HW 2 "Scripting and Testing"
+description: >-
+    Homework 2: "Scripting and Testing"
+active_tab: homework
+parent: Assignments
+nav_order: 5
+nav_exclude: false
+search_exclude: false
+---
 
-**CIS 1902 Homework 3: Scripting and Testing 📝**
-<center><big>**Due Mon February 20, 2023 11:59 pm EST**</big></center>
-
-(#) Learning objectives
+Homework 2: Scripting and Testing
+=============================================================
+## Learning objectives
 
 - Familiarization with first party modules
     - `argparse`
@@ -15,12 +24,12 @@
 
 - Practice writing unit tests
 
-(#) Starter files
+## Starter files
 
-- [reddit.py](hw3/reddit.py)
-- [test_reddit.py](hw3/test_reddit.py)
+- [reddit.py](../reddit.py)
+- [test_reddit.py](../test_reddit.py)
 
-(#) Python as a scripting language
+## Python as a scripting language
 
 As we have seen so far, Python is a high-level and interpreted language with clear and concise syntax. These attributes make it a good choice for a number of tasks, such as [scripting](https://en.wikipedia.org/wiki/Scripting_language).
 
@@ -30,11 +39,11 @@ In this homework, you will build a command line utility that manipulates JSON da
 
 In addition to manipulating JSON data, you will also practice writing unit tests for your script to ensure correct behavior.
 
-(##) Setup
+### Setup
 
 This is our first homework assignment that uses modules, including a 3rd party module that does not come installed by default. You can install `requests` like we did in lecture by executing `python3 -m pip install requests`:
 
-~~~~~~~~ bash
+``` bash
 # the output of your terminal may look something like this
 $ python3 -m pip install requests
 
@@ -49,18 +58,18 @@ Collecting idna<3,>=2.5
   Using cached idna-2.10-py2.py3-none-any.whl (58 kB)
 Installing collected packages: urllib3, chardet, idna, requests
 Successfully installed chardet-3.0.4 idna-2.10 requests-2.24.0 urllib3-1.25.10
-~~~~~~~~
+```
 
 Further documentation for using the `requests` module can be found [here](https://requests.readthedocs.io/en/master/).
 
 
-(#) Redditing from the terminal
+## Redditing from the terminal
 
 With web browsers these days tracking your every move, and with pesky advisers or managers peeking over your shoulder to see what's on your computer screen, sometimes you just want to do some Reddit browsing from the safety of your inconspicuous terminal. This script `reddit.py` will do exactly that, allowing you to pull posts from your subreddit of choice and display them in your terminal window.
 
 Running any script or command with the `-h` (meaning "help") flag provides the user with a small help page for running that script/command, including possible options and arguments to change the execution. See a sample `python3 reddit.py -h` output below:
 
-~~~~~~~~~~~~~~~~~~~~~~shell linenumbers
+```bash
 $ python3 reddit.py -h
 usage: reddit.py [-h] [-n N] [-o {score,title}] [-t T] url
 
@@ -74,10 +83,10 @@ optional arguments:
   -n N        number of posts to display (default: 10)
   -o {score,title}  field to sort posts by (default: score)
   -t T        truncate title to specified length (default: 60)
-~~~~~~~~~~~~~~~~~~~~~~
+```
 
-!!!
-    When you run `python3 reddit.py -h` you may have a slightly different output depending on what help text you write.
+{: .note }
+When you run `python3 reddit.py -h` you may have a slightly different output depending on what help text you write.
 
 - The `-n` flag specifies the number of posts to display. By default, this is 10.
 
@@ -85,9 +94,9 @@ optional arguments:
 
 - The `-t` flag specifies the maximum length for the posts' titles. Titles longer than this value should be truncated. The default value is 60.
 
-(##) Example Usage
+### Example Usage
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~ bash
+``` bash
 # view the r/python subreddit with default parameters
 $ python3 reddit.py python
 0.      Mypy 1.0 Released (score: 432)
@@ -140,14 +149,14 @@ $ python3 reddit.py philadelphia -n 2 -o score
         https://v.redd.it/4ibmsta0pnga1
 1.      Recent pics around Center City (score: 227)
         https://www.reddit.com/gallery/10w58lr
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
-!!!
-    Since we're pulling data from an active website, the posts will likely have changed when you run these commands.
+{: .note }
+Since we're pulling data from an active website, the posts will likely have changed when you run these commands.
 
-(#) Implementation details
+## Implementation details
 
-(##) `reddit.py`
+### `reddit.py`
 
 You will implement the following functions:
 
@@ -158,10 +167,10 @@ You will implement the following functions:
 
 Further details on the function behvaior can be found in the docstrings provided in the starter file.
 
-!!! Tip
-    For code style this assignment, we will be performing a close read of `format_reddit_data()` **and** the unit test associated with it, `test_format_reddit_data()`.
+{: .note }
+For code style this assignment, we will be performing a close read of `format_reddit_data()` **and** the unit test associated with it, `test_format_reddit_data()`.
 
-(##) HTTP - Some Background
+### HTTP - Some Background
 
 [Hypertext Transfer Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP) is the protocol through which client computers and servers communicate. Traditionally, a client (e.g. you on your computer) will send an HTTP request to some server (e.g. Reddit) by clicking on a link. The server will give an HTTP response back to the client, which will either contain the content that the client requested (e.g. the Reddit homepage) or an error explaining that something went wrong. There are a few different kinds of HTTP requests, but you only need to worry about [GET requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET).
 
@@ -170,7 +179,7 @@ However, a user surfing the web isn't the only way that HTTP requests can be sen
 For the sake of simplicity, you do not need to handle HTTP errors, and you only need to worry about sending HTTP [GET requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET).
 
 
-(##) JSON and `requests`
+### JSON and `requests`
 
 Reddit provides a [JSON](https://www.json.org/json-en.html) feed for each subreddit which can be accessed by adding `.json` to the end of any subreddit url. We will fetch JSON data via the `requests` module.
 
@@ -178,31 +187,31 @@ The HTTP request has two components: the request line (which you don't need to w
 
 In order to send an HTTP GET request, you will be using the [`requests.get()`](https://requests.readthedocs.io/en/master/api/#requests.get) method, which requires a URL argument and accepts an optional argument describing its request headers.
 
-!!! WARNING Respecting web scraping rules
-    The Reddit admins require that all requests sent via web scraper include the request header `user-agent` so they can keep track of the requests they receive. It is imperative that you include this header in your request, and **including this header is part of the grading rubric.**
+{: .warning }
+The Reddit admins require that all requests sent via web scraper include the request header `user-agent` so they can keep track of the requests they receive. It is imperative that you include this header in your request, and **including this header is part of the grading rubric.**
 
 You can see an example of how to specify the headers for an HTTP request and then make a GET request below:
 
-~~~~~~~~~~~~~~~ python
+``` python
 headers = {
     "user-agent": "CIS 1920 Spring 2023 HW3 by [insert your email here]"
 }
 response = requests.get("https://www.reddit.com/r/python/.json", headers=headers)
-~~~~~~~~~~~~~~~
+```
 where `headers` is a Python dict, and `response` is a Python string.
 
 We can then access the JSON data from the response in the form of a Python dict by calling the `response.json()` method:
 
-~~~~~~~~~~~~~~~ python
+``` python
 print(response.json())
 {'kind': 'Listing', 'data': {'modhash': '', 'dist': 27, 'children': [{'kind': 't3', 'data': {'approved_at_utc': None, 'subreddit': 'Python', ...
-~~~~~~~~~~~~~~~
+```
 
 The output from `response.json()` can be treated like a normal Python dict. You should use this dict to retrieve the Reddit data to display as output.
 
 The resulting dict may be a bit overwhelming to look at, so to make viewing easier you can pretty print it using:
 
-~~~~~~~~~~~~~~~ python
+``` python
 print(json.dumps(response.json(), indent=4))
 {
     "kind": "Listing",
@@ -216,13 +225,13 @@ print(json.dumps(response.json(), indent=4))
                     "approved_at_utc": null,
                     "subreddit": "Python",
 ...
-~~~~~~~~~~~~~~~
+```
 
-(##) `test_reddit.py`
+### `test_reddit.py`
 
 For this homework assignment, you will write your own unit tests to check the correctness of your function implementation. We've provided function stubs in `test_reddit.py` for you to do so, with the exception of `print_reddit_data()`, which you do not have to test. You can run your unit tests like we did in lecture by executing `python3 test_reddit.py`:
 
-~~~~~~~~~~ bash
+``` bash
 $ python3 test_reddit.py
 usage: test_reddit.py [-h] [-n N] [-o {score,title}] [-t T] url
 
@@ -241,15 +250,15 @@ optional arguments:
 Ran 3 tests in 0.003s
 
 OK
-~~~~~~~~~~
+```
 
 You are free to write whatever test cases you'd like in order to ensure proper functionality of your implementation.  Most importantly, we will be checking whether your unit tests have adequate **code coverage,** which is the percentage of the lines of code your test cases cover out of all the lines of code. You will receive full credit if your unit tests cover **at least 80% of your code**.
 
-!!!
-    Note that code coverage considers which lines of code are run during a test, not whether each individual line of code has a test case associated with it.
+{: .note }
+Note that code coverage considers which lines of code are run during a test, not whether each individual line of code has a test case associated with it.
 
 For example, this simple unit test we wrote during lecture for `fib_generator()` has 100% code coverage:
-~~~~~~~~~~~~~~~ python
+``` python
 # this example function is a generator which creates an iterable Fibonacci sequence
 def fib_generator(max_iter=5):
     """Generate the fibonacci sequence for the specified iterations."""
@@ -270,13 +279,14 @@ def test_fib_generator(self):
 
     self.assertEqual(actual_five, expected_five)    # assertEqual compares 2 values, just like JUnit
 
-~~~~~~~~~~~~~~~
+```
 
 We have already provided a test case for `build_parser()` in the starter file as an additional example.
 
 To check your unit test coverage, simply submit `test_reddit.py` and `reddit.py` to Gradescope and you will see an output like the following.
 
-![](hw3/hw3_coverage.png)
+{:.centered.imgmax}
+![](../hw2_coverage.png)
 
 Don't worry too much about the code coverage threshold -- if you implement all of the test stubs with one test per function, your code coverage should be more than enough. The autograder in Gradescope will also tell you which lines of code are not covered if you do not meet the threshold, which will help you adjust your test cases.
 
@@ -284,17 +294,18 @@ Outside of the unit test coverage, we will check the functionality of your imple
 
 **Since the subreddits are live and post scores can change in real time, we do not expect the outputs to match exactly.**
 
-!!!
-    When you submit to Gradescope, the four commands will not be autograded, but you will see the output we will use to manually check the functionality of your script, so you can verify the output is similar:
+{: .warning }
+When you submit to Gradescope, the four commands will not be autograded, but you will see the output we will use to manually check the functionality of your script, so you can verify the output is similar:
 
-![](hw3/hw3_functionality.png)
+{:.centered.imgmax}
+![](../hw2_functionality.png)
 
-(##) Other Requirements
+### Other Requirements
 
-!!! WARNING
-    No libraries outside of `argparse`, `json`, `requests`, and `unittest` may be imported for this homework.
+{: .warning }
+No libraries outside of `argparse`, `json`, `requests`, and `unittest` may be imported for this homework.
 
-(#) Rubric
+## Rubric
 
 | Section | Points |
 |---------|--------|
@@ -310,15 +321,13 @@ Test cases achieve at least 80% code coverage | 3
 `format_reddit_data()` and <br>`test_format_reddit_data()` code style | 1
 **Total** | 10
 
-(#) Submission
+## Submission
 
-You will upload both your `reddit.py` and `test_reddit.py` code to [**Gradescope**](https://www.gradescope.com/courses/477992) for submission -- **be sure to upload both files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome
+You will upload both your `reddit.py` and `test_reddit.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission -- **be sure to upload both files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome
 to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
 
 Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
 
-(#) Attribution
+## Attribution
 
 This homework assignment was adapted from Peter Bui's [Python scripting assignment](https://www3.nd.edu/~pbui/teaching/cse.20289.sp20/homework05.html), which is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
-
-<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

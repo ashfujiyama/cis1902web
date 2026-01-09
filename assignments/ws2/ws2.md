@@ -1,34 +1,44 @@
-<meta charset="utf-8">
-**CIS 1902 Worksheet 3**
-<center><big>**Due Friday 2/24 11:59 pm EST**</big></center>
+---
+layout: page
+title: WS2 "Benchmarking & NumPy"
+description: >-
+    Worksheet 2: "Benchmarking & NumPy"
+active_tab: homework
+parent: Assignments
+nav_order: 6
+nav_exclude: false
+search_exclude: false
+---
 
-(#) Objectives
+Worksheet 2: Benchmarking & NumPy
+=============================================================
+## Objectives
 
 - Introduce performance benchmarking as a concept
 - Practice with NumPy logical indexing and broadcasting
 
-(#) Starter files
+## Starter files
 
-- [ws3.py](ws3.py)
+- [ws2.py](../ws2.py)
 
-(#) Performance benchmarking
+## Performance benchmarking
 
 One of the things I love about the scientific computing packages in Python is how easy and accessible they make experimentation and simulation -- you have your own laboratory and numerical sandbox sitting right here on your machine!
 
-(##) Task 1: How fast can we matrix transpose? [0.5 points]
+### Task 1: How fast can we matrix transpose? [0.5 points]
 
-As discussed in class, NumPy is the go-to numerical computing framework in Python, with functionality comparable to Matlab. Because much of NumPy compiles down into C code at runtime, we are able to reap the performance benefits of C while maintaining the readability and conciseness of Python. Let's see this in action with a simple benchmarking experiment -- hop over to the provided `ws3.py` starter file.
+As discussed in class, NumPy is the go-to numerical computing framework in Python, with functionality comparable to Matlab. Because much of NumPy compiles down into C code at runtime, we are able to reap the performance benefits of C while maintaining the readability and conciseness of Python. Let's see this in action with a simple benchmarking experiment -- hop over to the provided `ws2.py` starter file.
 
-Let's first import our modules at the top of `ws3.py`, making sure to install NumPy using pip if it isn't installed on your machine:
+Let's first import our modules at the top of `ws2.py`, making sure to install NumPy using pip if it isn't installed on your machine:
 
-~~~~~~~python
+```python
 import time
 import numpy as np
-~~~~~~~
+```
 
 The [time](https://docs.python.org/3/library/time.html) module is a built-in library for time access and timestamp conversions. Calling `time.time()` returns the number of seconds since the Unix epoch, which is January 1, 1970:
 
-~~~~~~shell
+```bash
 $ python3
 Python 3.8.3 (default, Jul  2 2020, 16:21:59)
 [GCC 7.3.0] :: Anaconda, Inc. on linux
@@ -37,25 +47,25 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> time.time()
 1634267860.807327
 # that's a lot of seconds
-~~~~~~
+```
 
 We can then use `time.time()` to measure how long certain pieces of code run in our code by recording a start and end time:
 
 
-~~~~~python
+```python
 start_time = time.time()
 code_we_want_to_benchmark()
 end_time = time.time()
 
 # the amount of time, in seconds, code_we_want_to_benachmark() took to run
 print(end_time - start_time)
-~~~~~
+```
 
 
 Since there is always some variability in how fast a given piece of code runs, we often run multiple trials of the code we want to benchmark and take an average:
 
 
-~~~~~python
+```python
 
 n_trials = 100
 run_times = []
@@ -70,19 +80,19 @@ for trial in range(n_trials):
 
 # the average run_time of code_we_want_to_benchmark() over 100 trials
 print(np.mean(run_times))
-~~~~~
+```
 
 Let's see how our matrix transpose function from Worksheet 2 stacks up to the NumPy `np.transpose()`.  We give an implementation of `list_transpose()` with the built-in list type using `map` and `zip` from Worksheet 2, but feel free to copy in your own implementation.
 
-We've also provided a partial implementation of the `benchmark_transpose()` function. Fill out the `TODO`s marked to complete the function and run `python3 ws3.py` to see the benchmarking results (it make take ~10 seconds or so for the program to complete). How much faster is the NumPy implementation of transpose compared to our list-based transpose?
+We've also provided a partial implementation of the `benchmark_transpose()` function. Fill out the `TODO`s marked to complete the function and run `python3 ws2.py` to see the benchmarking results (it make take ~10 seconds or so for the program to complete). How much faster is the NumPy implementation of transpose compared to our list-based transpose?
 
-(#) NumPy finger exercises
+## NumPy finger exercises
 
-(##) Task 2: Logical indexing practice: `clip()` [0.5 points]
+### Task 2: Logical indexing practice: `clip()` [0.5 points]
 
 We have the following code that *clips* values in 2D NumPy array to a given maximum value:
 
-~~~~~~~~ python linenumbers
+```python
 def clip(arr, max_val):
     """
     Re-assigns elements of arr greater than the given max_val to max_val.
@@ -103,11 +113,11 @@ def clip(arr, max_val):
                 arr[i, j] = max_val
     return arr
 
-~~~~~~~~
+```
 
 Let's take a look at some expected output:
 
-~~~~~~~~ python
+``` python
 >>> A = np.random.randint(0, 8, size=(5,5))
 >>> A
 array([[1, 7, 3, 1, 3],
@@ -121,25 +131,25 @@ array([[1, 6, 3, 1, 3],
        [1, 6, 1, 2, 0],
        [5, 1, 2, 6, 0],
        [3, 0, 0, 0, 6]])
-~~~~~~~~
+```
 
 However, we can improve the implementation of `clip` through logical indexing. Give a more concise implementation of `clip` using concepts from lecture -- this can be done in one line!
 
-(##) Task 3: Broadcasting practice: `time_units()` [0.5 points]
+### Task 3: Broadcasting practice: `time_units()` [0.5 points]
 
 [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html) is one of the most powerful concepts in NumPy, but it is also one that takes some getting used to. So, let's review the idea of NumPy array shapes and what happens when using operators on differently shaped arrays. We can fire up an interactive session and play with some array operations:
 
 
-~~~~~ python
+``` python
 >>> import numpy as np
 >>> a = np.array([1,2,3])
 >>> a.shape
 (3,)
-~~~~~
+```
 
 Note that the shape tuple of `a` only has one element, meaning that it is a one dimensional array. **This is different from a two dimensional array with three rows and one column!** The common command to transform a 1D array to a 2D array is `a.reshape(-1,1)`, which tells NumPy that we want an array with `1` column, but a dynamic number of rows dependent on how many elements are in `a`, indicated by the `-1` in the rows:
 
-~~~~~ python
+``` python
 # continuing the interpreter session from above
 >>> a.reshape(-1,1)
 array([[1],
@@ -148,7 +158,7 @@ array([[1],
 # we've created a matrix with 3 rows and 1 column
 >>> a.reshape(-1,1).shape
 (3, 1)
-~~~~~
+```
 
 This distinction between 1D and 2D arrays is important when we're broadcasting. In general, you're allowed to broadcast two arrays if:
 
@@ -157,7 +167,7 @@ This distinction between 1D and 2D arrays is important when we're broadcasting. 
 
 However, the behavior of these two cases are very different. Let's see this in our session:
 
-~~~~~ python
+``` python
 >>> b = np.array([2,3,4])
 >>> b.shape
 (3,)
@@ -165,13 +175,13 @@ However, the behavior of these two cases are very different. Let's see this in o
 array([2, 6, 12])
 >>> (a * b).shape
 (3,)
-~~~~~
+```
 
 Since `a` and `b` had the same shape, we can broadcast them together with the built-in `*` operation, and we get an *element-wise* multiplication: every element of `a` is multiplied by the corresponding element in `b`. Note how the result is still the same shape of `(3,)`.
 
 However, if we reshape `a` to be 2D:
 
-~~~~ python
+``` python
 >>> a.reshape(-1,1)
 array([[1],
        [2],
@@ -182,21 +192,19 @@ array([[2, 3, 4],
        [6, 9, 12]])
 >>> (a.reshape(-1, 1) * b).shape
 (3, 3)
-~~~~
+```
 
 A much different result! In the broadcasting scenario when one of the array dimensions is `1`, NumPy will take that dimension and "stretch" it to match the dimensions of the other array. So what we have in terms of the shapes: `(3,1) * (3,) -> (3,3)`.
 
 Specifically in this case, we are taking each row element of `a.reshape(-1,1)` and multiplying it by each column element of b, creating a column in our output for each element in b. This behavior can be tricky to conceptualize, so we encourage you to play inside the interpreter session to see what happens when arrays of different shapes are broadcast with one another.
 
-As a final piece of practice, try implementing the `time_units()` function in `ws3.py` using broadcasting, which takes in a 1D array of seconds and generates a matrix of times, with the columns corresponding to seconds, minutes, hours, and days. `time_units()` can also be done in one line, no `for` loops needed.
+As a final piece of practice, try implementing the `time_units()` function in `ws2.py` using broadcasting, which takes in a 1D array of seconds and generates a matrix of times, with the columns corresponding to seconds, minutes, hours, and days. `time_units()` can also be done in one line, no `for` loops needed.
 
-(##) Task 4: demo feedback [0.5 points]
+### Task 4: demo feedback [0.5 points]
 
 The last two lectures of the "Pythonic Foundations" of the course incorporated more live demos of implementing programs from scratch. What comments do you have for future demos in lecture? What did you like? What suggestions do you have for change? 
 
 Please write your response in the multiline comment provided in the `__main__` conditional of the worksheet.
 
-Once you've tried implementing these functions and filled out your feedback, submit `ws3.py` to Gradescope. That's it, worksheet 3 complete!
+Once you've tried implementing these functions and filled out your feedback, submit `ws2.py` to Gradescope. That's it, worksheet 3 complete!
 
-
-<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

@@ -1,32 +1,45 @@
-<meta charset="utf-8">
-**CIS 1902 Homework 1: Tries 🫧**
-<center><big>**Due January 27, 2023 11:59 pm EST**</big></center>
+---
+layout: page
+title: HW 0 "Tries"
+description: >-
+    Homework 0: "Tries"
+active_tab: homework
+parent: Assignments
+nav_order: 2
+nav_exclude: false
+search_exclude: false
+---
 
-(#) Learning objectives
+Homework 0: Tries
+=============================================================
 
+## Learning Objectives
 - Understand loops in Python
-- Familiarize yourself with `string` and `dict` data types
+- Familiarize yourself with string and dict data types
 - Understand pass by assignment in functions and mutable objects
 
-(#) Starter files
+## Starter Files
+- [hw0.py](./hw0.py)
 
-- [`hw1.py`](hw1.py)
-
-(#) What are tries?
+## What are tries?
 
 A trie -- pronounced "try" -- is a tree-based data structure for storing strings, with support for efficient pattern
 and prefix matching. Formally, given:
 
-- an alphabet $\mathcal{A}$ (set of valid characters, such as the English alphabet, or $\{\text{A,C,D,G}\}$ for DNA)
-- a set of strings $\mathcal{S}$ *such that no string is the prefix of another*
+- an alphabet $$\mathcal{A}$$ (set of valid characters, such as the English alphabet, or $$\{\text{A,C,D,G}\}$$ for DNA)
+- a set of strings $$\mathcal{S}$$ *such that no string is the prefix of another*
 
-A trie is an ordered tree whose nodes (except the root node) are labeled with characters from $\mathcal{A}$. The
-tree has $|\mathcal{S}|$ (size of $\mathcal{S}$) leaves, one for every string. The tree is constructed such that the
-concatenation of characters from root to leaf forms a string in $\mathcal{S}$.
+A trie is an ordered tree whose nodes (except the root node) are labeled with characters from $$\mathcal{A}$$. The
+tree has $$|\mathcal{S}|$$ (size of $$\mathcal{S}$$) leaves, one for every string. The tree is constructed such that the
+concatenation of characters from root to leaf forms a string in $$\mathcal{S}$$.
 
-Given $\mathcal{A}$ as the English alphabet and $\mathcal{S} = \{\text{bet, bid, bit, set, step}\}$, the
+Given $$\mathcal{A}$$ as the English alphabet and $$\mathcal{S} = \{\text{bet, bid, bit, set, step}\}$$, the
 corresponding trie is:
 
+{:.centered.imgmax}
+![trie](./trie.png)
+
+<!--
 *************************************************************************
 *                                       .-.
 *                                      |   |
@@ -55,23 +68,21 @@ corresponding trie is:
 *                                                      '-'
 *                                                      step
 *************************************************************************
+-->
 
 The primary application of tries is for string matching. String matching is a problem encountered in many fields of computer science, ranging from computational biology with DNA manipulation to NLP with sentence completion.
 Broadly speaking, given a collection of strings, we want to perform a "search" on the collection.
 What exactly does this mean? In some cases, we are interested in pattern matching: is a given string $X$ in the collection?
-In others, we are interested in prefix matching: find all strings that have a given substring $X$ as a prefix.
+In others, we are interested in prefix matching: find all strings that have a given substring $$X$$ as a prefix.
 
-(#) Tries in Python
-
+## Tries in Python
 In this homework, you will implement the basic functionality of a trie in Python, leveraging
 some of Python's data structures. The tree for the trie must be implemented as a nested Python `dict` (short for "dictionary"). The `dict` functions similarly to a Java HashMap, except the keys and values can be of varying data types within the same `dict` (unlike Java). For more information about the `dict`, see [the official docs](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict).
 
 Each key of the dictionary will be a string of length 1 representing a node, and each value will be another dictionary,
 whose keys correspond to the children of the key node. For the example trie above, the corresponding dictionary implementation would be:
 
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python linenumbers
+```python
 trie = {
     "b": {
         "e": {
@@ -93,11 +104,11 @@ trie = {
             }
         }
     }
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 Leaf nodes are represented by an empty dictionary. Also note that since the root node does not have a key, we use the outer-most dictionary itself as the root of the tree.
 
-(##) Implementation Details
+## Implementation Details
 
 You will write the following functions:
 
@@ -108,7 +119,7 @@ You will write the following functions:
 
 The key to implementing all of these functions is a basic tree search algorithm. Pseudo-code of a sample iterative tree search is described below:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python
+```python
 ...
 # start the search at the root of the trie
 cur_node = trie
@@ -117,15 +128,15 @@ for ... # iterate over characters c in word/prefix
   # move to the next node in the trie
   cur_node = cur_node[c]
 ...
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 
-(##) Other Requirements
+## Other Requirements
 
-!!! WARNING
-    No libraries may be imported for this homework.
+{: .warning }
+No libraries may be imported for this homework.
 
-(#) Some words on code style
+## Some words on code style
 
 An observation made by Guido van Rossum, the creator of Python, is that
 code is more often read than it is executed. One of the mantras of the Python language is that "readbility matters."
@@ -153,18 +164,18 @@ foo.py:93:11: W292 no newline at end of file
 ~~~~~~~
 -->
 
-(##) Code style "close reads"
+## Code style "close reads"
 
 For homeworks this semester, we will select function(s) that will be read closely for style and efficiency. Important stylistic choices that will be considered in the close reading are the descriptiveness and format of variable names, and comments that describe the code that is written. You can see the conventions that you should follow in the [official Python style guide](https://pep8.org), as mentioned above. Note that we don't expect you to meticulously follow every aspect of the official style guide, but provide it as guidance for your reference.
 
 The overall goal with the close reads is to provide more fine-grained feedback as opposed to just running a style checker like `pycodestyle` across the entire assignment, which is also useful but less personalized.
 
-!!! INFO
-    For this assignment, we will be making a close read of `list_matches()` and any helper functions you might write for it.
+{: .note }
+For this assignment, we will be making a close read of `list_matches()` and any helper functions you might write for it.
 
 Since this is the first homework we will grade accordingly (leniently 🙂), and will provide feedback in the Gradescope rubric so that you can continue to improve your coding skills.
 
-(#) Rubric
+## Rubric
 
 | Section | Points |
 |---------|--------|
@@ -177,14 +188,10 @@ Name, PennKey, and hours filled in | 0.5
  `list_matches()` code style | 1
  **Total** | 10
 
-(#) Testing your code and submission
+## Testing your code and submission
 
 You can test your code in the `main()` method that we included to check the behavior of your implementation on your local machine. Your `main()` method will not be graded and is purely for you to use as a sandbox.
 
-You will upload your `hw1.py` code to [**Gradescope**](https://www.gradescope.com/courses/477992) for submission. We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the due date without penalty.
+You will upload your `hw0.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission. We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the due date without penalty.
 
 Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
-
-<!-- Markdeep: -->
-
-<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

@@ -1,27 +1,40 @@
-<meta charset="utf-8">
-**CIS 1902 Homework 2: Binary Search Trees 🌳**
-<center><big>**Due February 10, 2023 11:59 pm EST**</big></center>
+---
+layout: page
+title: HW 1 "Binary Search Trees"
+description: >-
+    Homework 1: "Binary Search Trees"
+active_tab: homework
+parent: Assignments
+nav_order: 4
+nav_exclude: false
+search_exclude: false
+---
 
-(#) Learning objectives
+Homework 1: Binary Serach Trees
+=============================================================
 
+## Learning Objectives
 - Familiarization with implementing *Pythonic* classes
 - Familiarization with magic/dunder functions: `__iter__`, `__contains__`, `__len__`
 - Work with generator `yield` statements
 - Work with basic `Exception` handling
 
-(#) Starter files
+## Starter Files
+- [hw1.py](./hw1.py)
 
-- [`hw2.py`](hw2.py)
-
-(#) Binary Search Trees
+## Binary Search Trees
 
 Binary search trees (BSTs) are a popular data structure you may have seen for storing items when fast search is desired functionality.
 As the name suggests, each node in a BST can have at most two children (hence binary), with the central property of the tree being sorted: in order to be a valid BST, *the key in each node must be greater than or equal to any key stored in the left sub-tree, and less than or equal to any key stored in the right subtree*.
 
-This property allows for finding keys quickly: on average, finding a given key takes $O(log(n))$ time, where $n$ is the total number of items in the BST. However, the worst case for finding a key is $O(n)$ if the tree is imbalanced. The `search()` runtime depends on the order in which the keys were inserted.
+This property allows for finding keys quickly: on average, finding a given key takes $$O(log(n))$$ time, where $n$ is the total number of items in the BST. However, the worst case for finding a key is $$O(n)$$ if the tree is imbalanced. The `search()` runtime depends on the order in which the keys were inserted.
 
 Pictured below are two valid BSTs with the same keys:
 
+{:.centered.imgmax}
+![bst0](./bst0.png)
+
+<!--
 *******************************************
 *    .-.                    .-.
 *   | 3 |                  | 2 |
@@ -39,17 +52,22 @@ Pictured below are two valid BSTs with the same keys:
 *                                   | 5 |
 *                                    '-'
 *******************************************
+-->
 
-(#) BSTs in Python
+## BSTs in Python
 
 We'll implement BSTs in Python by writing two classes, `Node` and `BST`. To simplify things, we will only use `int` values as keys with no duplicate keys allowed. In fact, we will have `Node.insert()` raise an exception if we try to add a duplicate key to the BST.
 
-(##) Insert and search
+### Insert and search
 
 The `Node` class will do most of the heavy lifting, implementing the two key functions `insert()` and `search()`. The `BST` class you will implement holds a reference to the root node and wraps the `Node` functions.
 
 In words, `Node.search()` checks whether the current node contains the key we're searching for. If it does, then we return the current node. Otherwise, if the key we're searching for is less than the key at the current node, we'll search the left subtree, and if it is greater than the current key, we'll search the right subtree.
 
+{:.centered.imgmax}
+![bst1](./bst1.png)
+
+<!--
 ************************************************************************
 *           .-.                     .-.                  .-.
 *          | 3 |                   | 3 |                | 3 |
@@ -63,15 +81,15 @@ In words, `Node.search()` checks whether the current node contains the key we're
 *  key == 3? We're done!     key < 3? Search L     key > 3? Search R
 *                            subtree               subtree
 ************************************************************************
-
+-->
 
 Similarly, `Node.insert()` checks whether the current node contains the key we want to insert, and raises an Exception if it does since we're assuming no duplicates. Otherwise, if the key is less than the current node, we either create a new `Node` instance and insert the key to the left of the current node (if it doesn't have a left child) or we recursively try inserting again in the left subtree. The same applies for the right subtree if the key is greater than the current node.
 
-(##) Magic functions and traversal
+### Magic functions and traversal
 
 We'll also implement some magic functions for our BSTs. Like what we saw in lecture, with functions like `__iter__` and `__contains__` implemented we can use the nice syntactic sugar Python provides:
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python linenumbers
+```python
 bst = BST()
 bst.insert(3)
 bst.insert(2)
@@ -85,24 +103,29 @@ if 4 in bst:
 # uses __iter__ magic
 for node in bst:
     print(node)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+```
 
 For iteration, we will use **in-order traversal.** This means that, beginning at the root node, we will first recursively traverse the left subtree, return the root node, then recursively traverse the right subtree. Because of the properties of BSTs, this will result in printing all the keys in ascending order. Pictured below is an example, yielding a traversal of $2,3,5$.
 
+{:.centered.imgmax}
+![bst2](./bst2.png)
+
+<!--
 ************************************************************************
 *           .-.                     .-.                  .-.
 *          | 3 |                   | 3 |                | 3 |
 *           +-+                     +-+                  +-+
-*          /   \         --->      /   \      --->      /   \
+*          /   \         ---\>      /   \      ---\>      /   \
 *        .+.   .+.               .+.   .+.            .+.   .+.
 *       | 2 | | 5 |             | 2 | | 5 |          | 2 | | 5 |
 *        '-'   '-'               '-'   '-'            '-'   '-'
 *   Recursively traverse      Traverse node 3      Recursively traverse
 *   subtree rooted at 2                            subtree rooted at 5
 ************************************************************************
+-->
 
 
-(##) Implementation details
+### Implementation details
 
 You will implement the following functions:
 
@@ -114,7 +137,7 @@ You will implement the following functions:
 
 - `Node.search()`: recursively or iteratively searches for a key and returns the corresponding Node, if it exists.
 
-!!! Tip
+{: .note }
     For code style this assignment, we will be performing a close read of `Node.search()`
 
 - `BST.insert()`: wraps the `Node.insert()` function.
@@ -129,16 +152,16 @@ You will implement the following functions:
 
 Function signatures and additional details can be found in the documentation of the starter file.
 
-(##) Other Requirements
+### Other Requirements
 
-!!! WARNING
-    No libraries may be imported for this homework.
+{: .warning }
+No libraries may be imported for this homework.
 
-(##) Common Gotchas
+### Common Gotchas
 
 - Remember that when you are making an attribute assignment to use `self.foo`, `foo` by itself will be a local variable!
 
-(#) Rubric
+## Rubric
 
 | Section | Points |
 |---------|--------|
@@ -154,15 +177,10 @@ Name, PennKey, and hours filled in | 0.5
 
  **Note**: Our test cases for `BST.__len__` will implicitly test your `BST.insert` function, while test cases for `BST.__contains__` implicitly test both `BST.search` and `BST.insert`, so make sure those are implemented before testing!
 
-(#) Testing your code and submission
+## Testing your code and submission
 
 You can test your code using `__main__` to check the behavior of your implementation on your local machine.
 
-You will upload your `hw2.py` code to [**Gradescope**](https://www.gradescope.com/courses/477992) for submission. We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
+You will upload your `hw1.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission. We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
 
 Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
-
-
-<style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
-
-
