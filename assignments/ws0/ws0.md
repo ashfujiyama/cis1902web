@@ -24,21 +24,21 @@ Worksheet 0: Getting Started
 
 ## Installing Python
 
-Let's first make sure you have Python installed. We will be using Python 3 this semester. Please download and install the latest Python 3 version [here](https://www.python.org/downloads/), which is Python 3.11.1. 
+Let's first make sure you have Python installed. We will be using Python 3 this semester. Please download and install the latest Python 3 version [here](https://www.python.org/downloads/), which is Python 3.14.6.
 
 <!--Alternatively, you can install Python 3 through a package manager like `brew` (for OSX),  `apt-get` (for Ubuntu), or some other package manager.
 If you are using OSX or Linux, there's a decent chance you may already have Python 3 installed on your machine.
 -->
 
 {: .note }
-If you have an M1 Mac, be sure to download the Universal2 installer of Python [here](https://www.python.org/downloads/macos/). This is to avoid hardware compatability issues with some of the packages we'll be using later in the semester.
+If you have an M1 Mac (or later, e.g. M2-M5), be sure to download the Universal2 installer of Python [here](https://www.python.org/downloads/macos/). This is to avoid hardware compatability issues with some of the packages we'll be using later in the semester.  Be sure to download a stable release.
 
 
  You can then verify your installation by running `python3` in your terminal. If you're greeted with the `>>>` prompt, along with an indicator of Python 3.x version, you're in good shape:
 
 ```bash
 $python3
-Python 3.11.1 (main, Jan  2 2023, 15:56:16) [GCC 7.5.0] on linux
+Python 3.14.0 (v3.14.0:ebf955df7a8, Oct  7 2025, 08:20:14) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
@@ -53,8 +53,7 @@ Once inside the interpreter, we can run commands interactively just like what we
 
 ```bash
 $ python3
-Python 3.8.2 (default, Jul 16 2020, 14:00:26)
-[GCC 9.3.0] on linux
+Python 3.14.0 (v3.14.0:ebf955df7a8, Oct  7 2025, 08:20:14) [Clang 16.0.0 (clang-1600.0.26.6)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import this
 The Zen of Python, by Tim Peters
@@ -68,7 +67,7 @@ The so-called "Zen of Python" is printed to your terminal (are we sure Python pr
 # single line comments begin with a #
 ```
 
-Once you're done with the interpreter, type `exit()` or hit `ctl-d` to exit.
+Once you're done with the interpreter, type `exit()` or hit `ctrl-d` to exit.
 
 ## Task 2: Saying Wordle [1 point]
 Now that you have `ws0.py` open in an editor, you'll see that we've provided a `wordle()` function definition in it, with a triple-quoted comment describing the function. You can see the docstring labelling it as the second task and providing a brief description of the function. There is more to be said about docstrings as well, but for now let's look at the end of the function:
@@ -119,7 +118,7 @@ Your goal is remove that print statement and implement the rest of the Wordle ga
 1. Your secret word has to be 5 characters long.  Your program does not need to check this, however.
 2. The game will allow you 6 tries to guess the secret word.  Every time, it should prompt you to make a guess by asking, “What is the secret word?”
 3. Once you guess, the program will give you clues about how close the guess was:
-  - If your guess has no letters in common with the secret word, it will print 5 underscores: _ _ _ _ _ 
+  - If your guess has no letters in common with the secret word, it will print 5 underscores: _ _ _ _ _
   - If your guess contains a correct character in the wrong spot, it will mark that with a “?” sign corresponding to the space in your guess that holds the correct letter.  If you guessed “abcde” and “d” is somewhere in the secret word but not the fourth letter, the program will print something like this: _ _ _ ? _.
   - If your guess contains a correct character in the correct spot, it will mark that space with a “!” sign.  If you figured out that “d” belongs to the second space, then the program will print something like this: _ ! _ _ _.
 4. If you guess the entire word correctly, the program will print some congratulatory message (i.e. “you win!”).
@@ -164,9 +163,12 @@ Hint: to print the clues after a guess is made, you need 5 separate print statem
 
 Finally, we'd like to get to know everyone in the course a little better. In the **multi-line** triple-quote comment provided, fill out your responses to the following questions:
 
-- Where is your hometown?
-- What do you want to get out of this course?
-- Is there anything you'd like us to know about? This could pertain to your learning situation this semester, or something more general.
+- What is your major?
+- What CS courses have you taken before?  What CS classes are you taking right now?
+- What programming languages are you familiar with?  How familiar are you with each one?
+- What made you want to take this course?  What are you looking to get out of this course?
+- When would you like for our office hours to be?  You may list as many time slots as you would like.
+- Anything else you want for me to know?
 
 ## Submitting to Gradescope
 

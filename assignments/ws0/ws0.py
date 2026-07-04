@@ -19,7 +19,7 @@ if __name__ == '__main__':
 """
 Task 3: Tell us about yourself (can use bullet points)
 
-What is your major and year?
+What is your major?
 
 What CS courses have you taken before?  What CS classes are you taking right now?
 
@@ -27,7 +27,7 @@ What programming languages are you familiar with?  How familiar are you with eac
 
 What made you want to take this course?  What are you looking to get out of this course?
 
-When would you like for my office hours to be?  You can list any times except Tues/Thurs between 11 am and 4 pm.
+When would you like for our office hours to be?  You may list as many time slots as you would like.
 
 Anything else you want for me to know?
 
