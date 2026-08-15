@@ -11,7 +11,7 @@ seo:
 # CIS 1902
 {: .mb-2}
 
-2026 Spring
+2026 Fall
 {: .fs-6 .fw-300}
 
 ## Welcome!
@@ -19,7 +19,7 @@ Welcome! Python is a powerful language with both imperative and functional parad
 
 ## Attribution and Licensing
 
-This course would not be possible without the lecture and homework content created by Arun Kirubarajan and Jorge Mendez.
+This course would not be possible without the lecture and homework content created by past instructors of this course: Arun Kirubarajan, Jorge Mendez, and Tony Liu.
 
 You are free to use or extend these projects for educational purposes provided that:
 

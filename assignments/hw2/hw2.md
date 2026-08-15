@@ -95,76 +95,100 @@ When you run `python3 nytimes.py -h` you may have a slightly different output de
 - The `-t` flag specifies the maximum length for the articles' titles. Titles longer than this value should be truncated. The default value is 60.
 
 ### Example Usage
-## TODO CHANGE THIS SECTION!!!
 ``` bash
 # view the top articles in the "science" section with default parameters
 $ python3 nytimes.py science
-0.      Mypy 1.0 Released (score: 432)
-        https://mypy-lang.blogspot.com/2023/02/mypy-10-released.html
-1.      My first end to end python project. (score: 278)
-        https://www.reddit.com/r/Python/comments/10v36mr/my_first_end_to_end_python_project/
-2.      Gracy helps you handle failures, logging, retries, throttlin (score: 105)
-        https://www.reddit.com/r/Python/comments/10w0ykx/gracy_helps_you_handle_failures_logging_retries/
-3.      Building a real-time application using Python and WebSockets (score: 78)
-        https://www.reddit.com/r/Python/comments/10v99mp/building_a_realtime_application_using_python_and/
-4.      Lessons learned from 7 years of using mypy (score: 77)
-        https://www.reddit.com/r/Python/comments/10vnuxf/lessons_learned_from_7_years_of_using_mypy/
-5.      I wrote my first unit test today! (score: 49)
-        https://www.reddit.com/r/Python/comments/10vufhi/i_wrote_my_first_unit_test_today/
-6.      Build a Wordle Clone With Python and Rich – Real Python (score: 10)
-        https://realpython.com/python-wordle-clone/
-7.      txtai 5.3 released: open-source semantic search (score: 9)
-        https://github.com/neuml/txtai
-8.      Deploy your Pynecone app on Huggingface Spaces! (score: 7)
-        https://www.reddit.com/r/Python/comments/10vytoq/deploy_your_pynecone_app_on_huggingface_spaces/
-9.      Open Source Pricing and Billing Engine Built In Python (score: 6)
-        https://www.reddit.com/r/Python/comments/10w8pvc/open_source_pricing_and_billing_engine_built_in/
+0.      A.I. Is Finding Sperm Where Doctors Couldn’t (Date: 2026-08-11T05:02:13-04:00)
+        https://www.nytimes.com/2026/08/11/science/ai-infertile-men-sperm.html
+
+1.      An Electric Motorcycle Revolution (Date: 2026-08-11T13:47:26-04:00)
+        https://www.nytimes.com/2026/08/11/climate/electric-motorcycle-boom-developing-countries.html
+
+2.      As Europe Faces Another Heat Wave, Travelers Are Forced to A (Date: 2026-08-12T14:46:04-04:00)
+        https://www.nytimes.com/2026/08/12/travel/europe-travel-tourism-wildfires-heat-waves.html
+
+3.      Early-Onset El Niño (Date: 2026-08-13T15:28:25-04:00)
+        https://www.nytimes.com/2026/08/13/climate/el-nino-effects.html
+
+4.      Federal Job Cuts Are Making Wildfires Harder to Fight (Date: 2026-08-14T05:02:10-04:00)
+        https://www.nytimes.com/2026/08/14/climate/wildfires-forest-service-trump-cuts.html
+
+5.      Federal Judge Orders Pentagon to Lift Freeze on Wind Power (Date: 2026-08-06T14:24:31-04:00)
+        https://www.nytimes.com/2026/08/06/climate/pentagon-reviews-wind-farms-court-order.html
+
+6.      Frenzy for Solar Eclipse Glasses Takes Over London (Date: 2026-08-11T11:17:06-04:00)
+        https://www.nytimes.com/2026/08/11/world/europe/solar-eclipse-glasses-uk.html
+
+7.      From Nest to Deathbed, Jackie the Eagle Entranced California (Date: 2026-08-10T15:58:19-04:00)
+        https://www.nytimes.com/2026/08/10/us/jackie-bald-eagle-california-dead.html
+
+8.      Get Ready for Europe’s First Total Solar Eclipse in Decades (Date: 2026-08-10T00:01:06-04:00)
+        https://www.nytimes.com/2026/08/10/science/europe-total-solar-eclipse-how-to-watch.html
+
+9.     How Cyclospora Evaded the U.S. Food Safety System to Sicken  (Date: 2026-08-15T05:01:56-04:00)
+        https://www.nytimes.com/2026/08/15/health/cyclospora-invesigation-fda.html
 
 
-# view the top 5 r/nba subreddit posts
-$ python3 reddit.py nba -n 5
-0.      [Highlight] Dame defies all logic as he drills the standing  (score: 19354)
-        https://streamable.com/3w1jcc
-1.      Vardon: Several people close to James described that loss in (score: 5658)
-        https://www.reddit.com/r/nba/comments/10w6gdb/vardon_several_people_close_to_james_described/
-2.      Cam Thomas explodes AGAIN vs the Clippers with a Career High (score: 5278)
-        https://www.reddit.com/r/nba/comments/10vqjuc/cam_thomas_explodes_again_vs_the_clippers_with_a/
-3.      Klay Thompson checks out with 42 points on 12 threes! (score: 4543)
-        https://www.reddit.com/r/nba/comments/10vt8xk/klay_thompson_checks_out_with_42_points_on_12/
-4.      Remember the apology by Kyrie about the video he posted? Som (score: 2672)
-        https://www.reddit.com/r/nba/comments/10w8upt/remember_the_apology_by_kyrie_about_the_video_he/
+# view the 5 most recent articles from the home page
+$ python3 nytimes.py home -n 5
+0.      An Island Used to Storms Readies for One of the Strongest in (Date: 2026-08-15T14:26:29-04:00)
+        https://www.nytimes.com/2026/08/15/weather/hurricane-lala-hawaii-emergency-prep.html
+
+1.      As China Pushes to Expand in Asia, Trump Focuses on Iran (Date: 2026-08-15T05:01:01-04:00)
+        https://www.nytimes.com/2026/08/15/us/politics/china-expansion-asia-trump-iran.html
+
+2.      Canadian Petition to Expel U.S. Ambassador Pete Hoekstra Tak (Date: 2026-08-15T05:02:15-04:00)
+        https://www.nytimes.com/2026/08/15/world/canada/hoekstra-ambassador-petition-canada-trump.html
+
+3.      Central Synagogue Attack Rattles Jewish New Yorkers (Date: 2026-08-15T15:04:11-04:00)
+        https://www.nytimes.com/2026/08/15/nyregion/central-synagogue-shabbat-assault.html
+
+4.      Democrats Reshape 2028 Presidential Primary Calendar, and Pu (Date: 2026-08-15T14:27:45-04:00)
+        https://www.nytimes.com/2026/08/15/us/politics/democrats-new-presidential-primary-calendar.html
 
 
-# view top 2 r/aww subreddit posts sorted by title with shortened titles
-$ python3 reddit.py aww -n 2 -o title -t 30
-0.      (OC) This Kitten I found on va (score: 1195)
-        https://i.redd.it/0542ikr81rga1.jpg
-1.      A friend of mine reached out t (score: 9113)
-        https://v.redd.it/6hfrtjixcoga1
+# view 2 food articles sorted by time (most recently published articles first) with shortened titles
+$ python3 nytimes.py business -n 2 -o time -t 30
+0.      ‘I Will be Making This on Repe (Date: 2026-08-15T11:00:07-04:00)
+        https://www.nytimes.com/2026/08/15/dining/i-will-be-making-this-on-repeat-until-i-cant-look-at-eggs-or-tomatoes-anymore.html
+
+1.      The Original Viral Recipe (Date: 2026-08-15T10:00:05-04:00)
+        https://www.nytimes.com/2026/08/15/dining/the-original-viral-recipe.html
 
 
-# view top 2 r/philadelphia subreddit posts sorted by score
-$ python3 reddit.py philadelphia -n 2 -o score
-0.      Stop parking on corners 🗣️ (score: 1458)
-        https://v.redd.it/4ibmsta0pnga1
-1.      Recent pics around Center City (score: 227)
-        https://www.reddit.com/gallery/10w58lr
+# view 2 articles from the world section sorted by title
+$ python3 nytimes.py world -n 2 -o title
+0.      $10 Million in Gold Found Buried Under Former Brewery in Bel (Date: 2026-08-15T15:36:29-04:00)
+        https://www.nytimes.com/2026/08/15/world/europe/gold-bars-coins-belgium.html
+
+1.      8 Matisse Works, Looted from Library in Brazil, Are Recovere (Date: 2026-08-14T06:56:23-04:00)
+        https://www.nytimes.com/2026/08/14/world/americas/matisse-stolen-art-found-sao-paulo-brazil-heist.html
 ```
 
 {: .note }
-Since we're pulling data from an active website, the posts will likely have changed when you run these commands.
+Since we're pulling data from an active website, the articles will likely have changed when you run these commands.
 
-## Creating a NYT Developer Account
+### The New York Times API
 
-In order to have our script access the New York Times' article data, we will make use of their official API which is currently free to access.  In exchange for using their free service, New York Times requires users to adhere to their [Terms of Use](https://developer.nytimes.com/terms).  One such term is (b.) the creation and use of a singular API key as a means for the New York Times to identify and track your usage.
+When you read the news online on [https://www.nytimes.com/](https://www.nytimes.com/), you're using the New York Time's *user interface (UI)* to access their news data.  Buttons, clickable links, and navigation menus are a few examples of ways that you (the user) can interact with the webpage.
+
+On the other hand, your script will be utilizing NY Times' *application programming interface (API)* to access any NYT article information.  An API is specifically designed for other software (such as your terminal script) to access the services offered, and is not designed for direct human use.  Instead of clicking buttons or navigating visual menus, our script will be making "API calls" to browse the NYT news.
+
+It is lucky that the New York Times not only has their own API, but it is also free to use!  Some websites don't release their own APIs (meaning you would need to find a 3rd party API) or charge money for access.  Some websites may offer a free tier, but would impose limits that may incentivize the user to pay for upgraded access.  Common limits include:
+1. Rate-limit establishment: Users can only make a certain number of API calls per hour (or day).  For example, NYT has a limit of 5 API calls per minute, and they recommend having your script sleep for 12 seconds in between calls.
+2. Delayed Return Values: While the NYT returns real-time data (returned articles match what the NYT is currently displaying on their webpage), other services may return data that is 12 or 24 hours out-of-date.
+
+### Creating a NYT Developer Account
+
+In exchange for using their free service, New York Times requires users to adhere to their [Terms of Use](https://developer.nytimes.com/terms).  One such term is (b.) the creation and use of a singular API key as a means for the New York Times to identify and track your usage.
 
 {: .note }
-These steps can also be found at https://developer.nytimes.com/get-started, but they are also enumerated here for your convenience.
+These steps can also be found at [https://developer.nytimes.com/get-started](https://developer.nytimes.com/get-started), but they are also enumerated here for your convenience.
 
-1. Register for a new account by going to https://developer.nytimes.com/accounts/create.  Fill in your first name, last name, *Penn email*, and password.  Agree to the terms, then click "Create New Account."
+1. Register for a new account by going to [https://developer.nytimes.com/accounts/create](https://developer.nytimes.com/accounts/create).  Fill in your first name, last name, *Penn email*, and password.  Agree to the terms, then click "Create New Account."
 2. Go to your Penn email inbox and locate the email sent by `code@nytimes.com`.  Click on the link in the email to verify your account.
-3. Log into your newly verified account, then go to https://developer.nytimes.com/my-apps.  Click on the button that says `+New App`.
-4. Enter in the information to register a new app that is now attached to your NYT Dev account.  In the Overview section, our app name will be `HW2 Script`, and we will leave the description field blank.  In the APIs section, we want to enable the very last API: "**Top Stories API**".  Once you click `Enable` for that API, click the `Save` button on the bottom right corner.  You should now see that your app, "HW2 Script", should be assigned an App ID, and it also now has an API Key and Secret.  You will need this later.
+3. Log into your newly verified account, then go to [https://developer.nytimes.com/my-apps](https://developer.nytimes.com/my-apps).  Click on the button that says `+New App`.
+4. Enter in the information to register a new app that is now attached to your NYT Dev account.  In the Overview section, our app name will be `HW2 Script`, and we will leave the description field blank.  In the APIs section, we want to enable the very last API: "**Top Stories API**".  Once you click `Enable` for that API, click the `Save` button on the bottom right corner.  You should now see that your app, "HW2 Script", should be assigned an App ID, and it also now has an API Key and Secret.  You will need the API Key later.
 
 
 ## Implementation details
@@ -183,22 +207,15 @@ Further details on the function behvaior can be found in the docstrings provided
 <!-- {: .note }
 For code style this assignment, we will be performing a close read of `format_data()` **and** the unit test associated with it, `test_format_data()`. -->
 
+Now that we have our NYT Developer account and the script's stub file, how do we make API calls?  With HTTP!
+
 ### HTTP - Some Background
 
 [Hypertext Transfer Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP) is the protocol through which clients and servers communicate. Traditionally, a client (e.g. your computer) will send an HTTP request to some server (e.g. The New York Times) by clicking on a link. The server (which is just another computer that holds the data you're requesting) will give an HTTP response back to the client, which will either contain the content that the client requested (e.g. the NYT homepage) or an error explaining that something went wrong. There are a few different kinds of HTTP requests, but you only need to worry about [GET requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET).
 
-However, a user surfing the web isn't the only way that HTTP requests can be sent. Programs can also send HTTP requests to retrieve information from a server to use as a part of its execution. This is where JSON comes into play--JSON is a way for servers to encode information that a program might request. The simple key-value representation makes it easy for programmers to dissect and use the information coming from the request. We will explain how to send a GET request for JSON data in the following section.
+However, a user surfing the web isn't the only way that HTTP requests can be sent. Programs can also send HTTP requests to retrieve information from a server to use as a part of its execution.  Your script will be making an API call using an HTTP GET request, using the [`requests.get()`](https://requests.readthedocs.io/en/master/api/#requests.get) method, which requires a URL argument.
 
 For the sake of simplicity, you do not need to handle HTTP errors, and you only need to worry about sending HTTP [GET requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET).
-
-
-### JSON and `requests`
-
-Reddit provides a [JSON](https://www.json.org/json-en.html) feed for each subreddit which can be accessed by adding `.json` to the end of any subreddit url. We will fetch JSON data via the `requests` module.
-
-The HTTP request has two components: the request line (which you don't need to worry about) and the headers. The headers are a series of key-value pairs with information that the server should know before sending the its response.
-
-In order to send an HTTP GET request, you will be using the [`requests.get()`](https://requests.readthedocs.io/en/master/api/#requests.get) method, which requires a URL argument and accepts an optional argument describing its request headers.
 
 You can see an example of how to make a GET request below:
 
@@ -206,10 +223,15 @@ You can see an example of how to make a GET request below:
 url = "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=abc123abc123"
 response = requests.get(url)
 ```
-where `response` is a Python string, and your API key is included in the url (replace the fake API key in this example with your actual API key associated with your NYT Developer account).  In this example, you're requesting the top articles from the arts section of the New York Times.
 
 {: .note }
 You are required to use the following line in your code: `response = requests.get(url)`.  The autograder will not work if you don't use this exact line in your `load_data()` function!
+
+Notice how the URL contains all of the necessary context for the NYT to return the information we need.  You can see "topstories" which indicates the API we're using, and "arts" is the news section we want to get articles from.  We also included our API key in the URL (though you will need to replace `abc123abc123` with your actual API key associated with your NYT Developer account).
+
+The New York Times' API will send the data through an HTTP response, formatted in JSON.  This is what `requests.get(url)` returns.  JSON is a way for servers to encode information that a program might request.  The simple key-value representation makes it easy for programmers to dissect and use the information coming from the request.
+
+### JSON
 
 We can then access the JSON data from the response in the form of a Python dict by calling the `response.json()` method:
 
