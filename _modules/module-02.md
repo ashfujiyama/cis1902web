@@ -1,20 +1,20 @@
 ---
-title: Web Development
+title: Autograder+
 ---
 
-Mar 31
+Nov 9
 : [Web Scraping](#)
   : **Optional Reading** [Scraping Hospital Prices](https://www.npr.org/sections/health-shots/2022/07/27/1113091782/health-insurance-prices-for-care-are-now-out-there-but-finding-them-is-an-ordeal)
 : **HW 4 part 2**{: .label .label-red }[Scraping](../assignments/hw4/hw4)
 
-Apr 7
-: [Flask](#)
+Nov 16
+: [Autograder](#)
 
-Apr 14
-: [Flask and Django](#)
+Nov 23
+: [Autograder Pt. 2](#)
 
-Apr 21
+Nov 30
 : [Docker for App Deployment](#)
 
-Apr 24
-: [Lightning topics and course wrap-up](#)
+Dec 7
+: [Lightning topics (Python Interview Questions) and course wrap-up](#)
