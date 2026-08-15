@@ -26,7 +26,7 @@ Homework 0: Tries
 A trie -- pronounced "try" -- is a tree-based data structure for storing strings, with support for efficient pattern
 and prefix matching. Formally, given:
 
-- an alphabet $$\mathcal{A}$$ (set of valid characters, such as the English alphabet, or $$\{\text{A,C,D,G}\}$$ for DNA)
+- an alphabet $$\mathcal{A}$$ (set of valid characters, such as the English alphabet, or $$\{\text{A,C,T,G}\}$$ for DNA)
 - a set of strings $$\mathcal{S}$$ *such that no string is the prefix of another*
 
 A trie is an ordered tree whose nodes (except the root node) are labeled with characters from $$\mathcal{A}$$. The
@@ -72,7 +72,7 @@ corresponding trie is:
 
 The primary application of tries is for string matching. String matching is a problem encountered in many fields of computer science, ranging from computational biology with DNA manipulation to NLP with sentence completion.
 Broadly speaking, given a collection of strings, we want to perform a "search" on the collection.
-What exactly does this mean? In some cases, we are interested in pattern matching: is a given string $X$ in the collection?
+What exactly does this mean? In some cases, we are interested in pattern matching: is a given string $$X$$ in the collection?
 In others, we are interested in prefix matching: find all strings that have a given substring $$X$$ as a prefix.
 
 ## Tries in Python
@@ -173,7 +173,7 @@ The overall goal with the close reads is to provide more fine-grained feedback a
 {: .note }
 For this assignment, we will be making a close read of `list_matches()` and any helper functions you might write for it.
 
-Since this is the first homework we will grade accordingly (leniently 🙂), and will provide feedback in the Gradescope rubric so that you can continue to improve your coding skills.
+Since this is the first homework we will grade accordingly (leniently 🙂), and will provide feedback in the Gradescope rubric so that you can continue to improve your coding skills.  Remember, the HW resubmission policy will give you the opportunity to directly apply what you've learned from our feedback to past homeworks (with the added bonus of improving your HW grade)!
 
 ## Rubric
 

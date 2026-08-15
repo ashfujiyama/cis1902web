@@ -10,11 +10,12 @@ nav_exclude: false
 search_exclude: false
 ---
 
-Homework 1: Binary Serach Trees
+Homework 1: Binary Search Trees
 =============================================================
 
 ## Learning Objectives
 - Familiarization with implementing *Pythonic* classes
+- Understanding the use of "wrapper functions"
 - Familiarization with magic/dunder functions: `__iter__`, `__contains__`, `__len__`
 - Work with generator `yield` statements
 - Work with basic `Exception` handling
@@ -24,10 +25,10 @@ Homework 1: Binary Serach Trees
 
 ## Binary Search Trees
 
-Binary search trees (BSTs) are a popular data structure you may have seen for storing items when fast search is desired functionality.
+Binary search trees (BSTs) are a popular data structure you may have seen for storing items when fast search is a desired functionality.
 As the name suggests, each node in a BST can have at most two children (hence binary), with the central property of the tree being sorted: in order to be a valid BST, *the key in each node must be greater than or equal to any key stored in the left sub-tree, and less than or equal to any key stored in the right subtree*.
 
-This property allows for finding keys quickly: on average, finding a given key takes $$O(log(n))$$ time, where $n$ is the total number of items in the BST. However, the worst case for finding a key is $$O(n)$$ if the tree is imbalanced. The `search()` runtime depends on the order in which the keys were inserted.
+This property allows for finding keys quickly: on average, finding a given key takes $$O(log(n))$$ time, where $$n$$ is the total number of items in the BST. However, the worst case for finding a key is $$O(n)$$ if the tree is imbalanced. The `search()` runtime depends on the order in which the keys were inserted.
 
 Pictured below are two valid BSTs with the same keys:
 
@@ -105,7 +106,7 @@ for node in bst:
     print(node)
 ```
 
-For iteration, we will use **in-order traversal.** This means that, beginning at the root node, we will first recursively traverse the left subtree, return the root node, then recursively traverse the right subtree. Because of the properties of BSTs, this will result in printing all the keys in ascending order. Pictured below is an example, yielding a traversal of $2,3,5$.
+For iteration, we will use **in-order traversal.** This means that, beginning at the root node, we will first recursively traverse the left subtree, return the root node, then recursively traverse the right subtree. Because of the properties of BSTs, this will result in printing all the keys in ascending order. Pictured below is an example, yielding a traversal of $$2,3,5$$.
 
 {:.centered.imgmax}
 ![bst2](./bst2.png)
@@ -137,8 +138,8 @@ You will implement the following functions:
 
 - `Node.search()`: recursively or iteratively searches for a key and returns the corresponding Node, if it exists.
 
-{: .note }
-    For code style this assignment, we will be performing a close read of `Node.search()`
+<!-- {: .note }
+    For code style this assignment, we will be performing a close read of `Node.search()` -->
 
 - `BST.insert()`: wraps the `Node.insert()` function.
 
@@ -183,4 +184,6 @@ You can test your code using `__main__` to check the behavior of your implementa
 
 You will upload your `hw1.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission. We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
 
-Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
+<!-- Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly. -->
+
+Please note that if you are resubmitting this homework (and other homework assignments in the future), it may take time for your grade to update, as myself and the TAs will be manually regrading for style points!

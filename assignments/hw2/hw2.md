@@ -26,8 +26,8 @@ Homework 2: Scripting and Testing
 
 ## Starter files
 
-- [reddit.py](../reddit.py)
-- [test_reddit.py](../test_reddit.py)
+- [nytimes.py](./nytimes.py)
+- [test_nytimes.py](./test_nytimes.py)
 
 ## Python as a scripting language
 
@@ -63,42 +63,42 @@ Successfully installed chardet-3.0.4 idna-2.10 requests-2.24.0 urllib3-1.25.10
 Further documentation for using the `requests` module can be found [here](https://requests.readthedocs.io/en/master/).
 
 
-## Redditing from the terminal
+## The Times from the terminal
 
-With web browsers these days tracking your every move, and with pesky advisers or managers peeking over your shoulder to see what's on your computer screen, sometimes you just want to do some Reddit browsing from the safety of your inconspicuous terminal. This script `reddit.py` will do exactly that, allowing you to pull posts from your subreddit of choice and display them in your terminal window.
+With web browsers these days tracking your every move, and with pesky advisers or managers peeking over your shoulder to see what's on your computer screen, sometimes you just want to do some browsing from the safety of your inconspicuous terminal. This script `nytimes.py` will do exactly that, allowing you to pull top article headlines from the New York Times and display them in your terminal window.
 
-Running any script or command with the `-h` (meaning "help") flag provides the user with a small help page for running that script/command, including possible options and arguments to change the execution. See a sample `python3 reddit.py -h` output below:
+Running any script or command with the `-h` (meaning "help") flag provides the user with a small help page for running that script/command, including possible options and arguments to change the execution. See a sample `python3 nytimes.py -h` output below:
 
 ```bash
-$ python3 reddit.py -h
-usage: reddit.py [-h] [-n N] [-o {score,title}] [-t T] url
+$ python3 nytimes.py -h
+usage: nytimes.py [-h] [-n N] [-o {title,time}] [-t T] url
 
-Pulls posts from subreddit and displays them in terminal
+Pulls top articles from New York Times and displays them in terminal
 
 positional arguments:
-  url         the URL or subreddit to visit
+  section           the section of articles to display
 
 optional arguments:
-  -h, --help  show this help message and exit
-  -n N        number of posts to display (default: 10)
-  -o {score,title}  field to sort posts by (default: score)
-  -t T        truncate title to specified length (default: 60)
+  -h, --help        show this help message and exit
+  -n N              number of articles to display (default: 10)
+  -o {title,time}   field to sort articles by (default: title)
+  -t T              truncate title to specified length (default: 60)
 ```
 
 {: .note }
-When you run `python3 reddit.py -h` you may have a slightly different output depending on what help text you write.
+When you run `python3 nytimes.py -h` you may have a slightly different output depending on what help text you write.
 
-- The `-n` flag specifies the number of posts to display. By default, this is 10.
+- The `-n` flag specifies the number of articles to display. By default, this is 10.
 
-- The `-o` flag specifies the Reddit post attribute to use for sorting the posts. By default this should be score. Note, if the parameter is score, then the posts should be ordered in descending order. Otherwise, the posts should be ranked in ascending order.
+- The `-o` flag specifies the article attribute to use for sorting. By default, this should be title. Note, if the parameter is time, then the articles should be ordered in descending order. Otherwise, the articles should be ranked in ascending order.
 
-- The `-t` flag specifies the maximum length for the posts' titles. Titles longer than this value should be truncated. The default value is 60.
+- The `-t` flag specifies the maximum length for the articles' titles. Titles longer than this value should be truncated. The default value is 60.
 
 ### Example Usage
-
+## TODO CHANGE THIS SECTION!!!
 ``` bash
-# view the r/python subreddit with default parameters
-$ python3 reddit.py python
+# view the top articles in the "science" section with default parameters
+$ python3 nytimes.py science
 0.      Mypy 1.0 Released (score: 432)
         https://mypy-lang.blogspot.com/2023/02/mypy-10-released.html
 1.      My first end to end python project. (score: 278)
@@ -154,25 +154,38 @@ $ python3 reddit.py philadelphia -n 2 -o score
 {: .note }
 Since we're pulling data from an active website, the posts will likely have changed when you run these commands.
 
+## Creating a NYT Developer Account
+
+In order to have our script access the New York Times' article data, we will make use of their official API which is currently free to access.  In exchange for using their free service, New York Times requires users to adhere to their [Terms of Use](https://developer.nytimes.com/terms).  One such term is (b.) the creation and use of a singular API key as a means for the New York Times to identify and track your usage.
+
+{: .note }
+These steps can also be found at https://developer.nytimes.com/get-started, but they are also enumerated here for your convenience.
+
+1. Register for a new account by going to https://developer.nytimes.com/accounts/create.  Fill in your first name, last name, *Penn email*, and password.  Agree to the terms, then click "Create New Account."
+2. Go to your Penn email inbox and locate the email sent by `code@nytimes.com`.  Click on the link in the email to verify your account.
+3. Log into your newly verified account, then go to https://developer.nytimes.com/my-apps.  Click on the button that says `+New App`.
+4. Enter in the information to register a new app that is now attached to your NYT Dev account.  In the Overview section, our app name will be `HW2 Script`, and we will leave the description field blank.  In the APIs section, we want to enable the very last API: "**Top Stories API**".  Once you click `Enable` for that API, click the `Save` button on the bottom right corner.  You should now see that your app, "HW2 Script", should be assigned an App ID, and it also now has an API Key and Secret.  You will need this later.
+
+
 ## Implementation details
 
-### `reddit.py`
+### `nytimes.py`
 
 You will implement the following functions:
 
 - `build_parser()`: returns an [ArgumentParser](https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser) instance with the defined parameters above.
-- `load_reddit_data()`: Loads reddit data from a given URL into a list of dicts.
-- `format_reddit_data()`: Sorts and formats the list of dicts from `load_reddit_data()`
-- `print_reddit_data()`: Prints the given list of reddit data in the specified string format
+- `load_data()`: Loads New York Times data from a given news section into a list of dicts.
+- `format_data()`: Sorts and formats the list of dicts from `load_data()`
+- `print_data()`: Prints the given list of New York Times data in the specified string format
 
 Further details on the function behvaior can be found in the docstrings provided in the starter file.
 
-{: .note }
-For code style this assignment, we will be performing a close read of `format_reddit_data()` **and** the unit test associated with it, `test_format_reddit_data()`.
+<!-- {: .note }
+For code style this assignment, we will be performing a close read of `format_data()` **and** the unit test associated with it, `test_format_data()`. -->
 
 ### HTTP - Some Background
 
-[Hypertext Transfer Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP) is the protocol through which client computers and servers communicate. Traditionally, a client (e.g. you on your computer) will send an HTTP request to some server (e.g. Reddit) by clicking on a link. The server will give an HTTP response back to the client, which will either contain the content that the client requested (e.g. the Reddit homepage) or an error explaining that something went wrong. There are a few different kinds of HTTP requests, but you only need to worry about [GET requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET).
+[Hypertext Transfer Protocol](https://developer.mozilla.org/en-US/docs/Web/HTTP) is the protocol through which clients and servers communicate. Traditionally, a client (e.g. your computer) will send an HTTP request to some server (e.g. The New York Times) by clicking on a link. The server (which is just another computer that holds the data you're requesting) will give an HTTP response back to the client, which will either contain the content that the client requested (e.g. the NYT homepage) or an error explaining that something went wrong. There are a few different kinds of HTTP requests, but you only need to worry about [GET requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET).
 
 However, a user surfing the web isn't the only way that HTTP requests can be sent. Programs can also send HTTP requests to retrieve information from a server to use as a part of its execution. This is where JSON comes into play--JSON is a way for servers to encode information that a program might request. The simple key-value representation makes it easy for programmers to dissect and use the information coming from the request. We will explain how to send a GET request for JSON data in the following section.
 
@@ -187,63 +200,63 @@ The HTTP request has two components: the request line (which you don't need to w
 
 In order to send an HTTP GET request, you will be using the [`requests.get()`](https://requests.readthedocs.io/en/master/api/#requests.get) method, which requires a URL argument and accepts an optional argument describing its request headers.
 
-{: .warning }
-The Reddit admins require that all requests sent via web scraper include the request header `user-agent` so they can keep track of the requests they receive. It is imperative that you include this header in your request, and **including this header is part of the grading rubric.**
-
-You can see an example of how to specify the headers for an HTTP request and then make a GET request below:
+You can see an example of how to make a GET request below:
 
 ``` python
-headers = {
-    "user-agent": "CIS 1920 Spring 2023 HW3 by [insert your email here]"
-}
-response = requests.get("https://www.reddit.com/r/python/.json", headers=headers)
+url = "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=abc123abc123"
+response = requests.get(url)
 ```
-where `headers` is a Python dict, and `response` is a Python string.
+where `response` is a Python string, and your API key is included in the url (replace the fake API key in this example with your actual API key associated with your NYT Developer account).  In this example, you're requesting the top articles from the arts section of the New York Times.
+
+{: .note }
+You are required to use the following line in your code: `response = requests.get(url)`.  The autograder will not work if you don't use this exact line in your `load_data()` function!
 
 We can then access the JSON data from the response in the form of a Python dict by calling the `response.json()` method:
 
 ``` python
 print(response.json())
-{'kind': 'Listing', 'data': {'modhash': '', 'dist': 27, 'children': [{'kind': 't3', 'data': {'approved_at_utc': None, 'subreddit': 'Python', ...
+{'status': 'OK', 'copyright': 'Copyright (c) 2026 The New York Times Company. All Rights Reserved.', 'section': 'Arts', 'last_updated': '2026-08-04T05:42:33-04:00', 'num_results': 37, 'results': ...
 ```
 
-The output from `response.json()` can be treated like a normal Python dict. You should use this dict to retrieve the Reddit data to display as output.
+The output from `response.json()` can be treated like a normal Python dict. You should use this dict to retrieve the New York Times data to display as output.
 
 The resulting dict may be a bit overwhelming to look at, so to make viewing easier you can pretty print it using:
 
 ``` python
 print(json.dumps(response.json(), indent=4))
 {
-    "kind": "Listing",
-    "data": {
-        "modhash": "",
-        "dist": 27,
-        "children": [
-            {
-                "kind": "t3",
-                "data": {
-                    "approved_at_utc": null,
-                    "subreddit": "Python",
+    "status": "OK",
+    "copyright": "Copyright (c) 2026 The New York Times Company. All Rights Reserved.",
+    "section": "home",
+    "last_updated": "2026-08-03T17:10:39-04:00",
+    "num_results": 24,
+    "results": [
+        {
+            "section": "us",
+            "subsection": "",
+            "title": "Trump\u2019s Meddling in Justice Dept. Causes Problems of His Own Making",
+            "abstract": "In the past week alone, President Trump\u2019s interference has imperiled one criminal case, set the stage for sanctions in a second and hindered the confirmation chances of his pick for attorney general.",
+            "url": "https://www.nytimes.com/2026/08/03/us/trump-doj-comey-reflecting-pool-blanche.html",
 ...
 ```
 
-### `test_reddit.py`
+### test_nyt.py
 
-For this homework assignment, you will write your own unit tests to check the correctness of your function implementation. We've provided function stubs in `test_reddit.py` for you to do so, with the exception of `print_reddit_data()`, which you do not have to test. You can run your unit tests like we did in lecture by executing `python3 test_reddit.py`:
+For this homework assignment, you will write your own unit tests to check the correctness of your function implementation. We've provided function stubs in `test_nytimes.py` for you to do so, with the exception of `print_data()`, which you do not have to test. You can run your unit tests like we did in lecture by executing `python3 test_nytimes.py`:
 
-``` bash
-$ python3 test_reddit.py
-usage: test_reddit.py [-h] [-n N] [-o {score,title}] [-t T] url
+```bash
+$ python3 test_nytimes.py
+usage: test_nytimes.py [-h] [-n N] [-o {title,time}] [-t T] section
 
-Pulls top posts from subreddit and displays them in terminal
+Pulls top articles from New York Times and displays them in terminal
 
 positional arguments:
-  url               the URL or subreddit to visit
+  section           the section of New York Times to display
 
 optional arguments:
   -h, --help        show this help message and exit
-  -n N              number of posts to display (default: 10)
-  -o {score,title}  field to sort articles by (default: score)
+  -n N              number of articles to display (default: 10)
+  -o {title,time}   field to sort articles by (default: title)
   -t T              truncate title to specified length (default: 60)
 ...
 ----------------------------------------------------------------------
@@ -283,7 +296,7 @@ def test_fib_generator(self):
 
 We have already provided a test case for `build_parser()` in the starter file as an additional example.
 
-To check your unit test coverage, simply submit `test_reddit.py` and `reddit.py` to Gradescope and you will see an output like the following.
+To check your unit test coverage, simply submit `test_nytimes.py` and `nytimes.py` to Gradescope and you will see an output like the following.
 
 {:.centered.imgmax}
 ![](../hw2_coverage.png)
@@ -292,7 +305,7 @@ Don't worry too much about the code coverage threshold -- if you implement all o
 
 Outside of the unit test coverage, we will check the functionality of your implementation by running the four commands shown above in the "Example Usage" section.
 
-**Since the subreddits are live and post scores can change in real time, we do not expect the outputs to match exactly.**
+<!-- **Since the subreddits are live and post scores can change in real time, we do not expect the outputs to match exactly.** -->
 
 {: .warning }
 When you submit to Gradescope, the four commands will not be autograded, but you will see the output we will use to manually check the functionality of your script, so you can verify the output is similar:
@@ -310,24 +323,25 @@ No libraries outside of `argparse`, `json`, `requests`, and `unittest` may be im
 | Section | Points |
 |---------|--------|
 Name, PennKey, and hours filled in | 0.5
-All functions in `reddit.py` are implemented | 0.5
-All test cases in `test_reddit.py` are implemented | 0.5
-`requests` header correctly populated | 0.5
+All functions in `nytimes.py` are implemented | 0.5
+All test cases in `test_nytimes.py` are implemented | 0.5
 Test cases achieve at least 80% code coverage | 3
-`python3 reddit.py python` correctness | 1
-`python3 reddit.py nba -n 5` correctness| 1
-`python3 reddit.py aww -n 2 -o title -t 30` correctness | 1
-`python3 reddit.py philadelphia -n 2 -o score` correctness | 1
-`format_reddit_data()` and <br>`test_format_reddit_data()` code style | 1
-**Total** | 10
+`python3 nytimes.py home` correctness | 1
+`python3 nytimes.py science -n 5` correctness| 1
+`python3 nytimes.py world -n 2 -o time -t 30` correctness | 1
+`python3 nytimes.py us -n 2 -o title` correctness | 1
+code style | 3
+**Total** | 11.5
 
 ## Submission
 
-You will upload both your `reddit.py` and `test_reddit.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission -- **be sure to upload both files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome
+You will upload both your `nytimes.py` and `nytimes.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission -- **be sure to upload both files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome
 to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
 
-Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
+Please keep in mind that the Gradescope automatically locks your homework submissions after the due date, and you will need to request a homework re-opening using the weekly Google Form.
 
 ## Attribution
 
-This homework assignment was adapted from Peter Bui's [Python scripting assignment](https://www3.nd.edu/~pbui/teaching/cse.20289.sp20/homework05.html), which is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+This homework assignment was adapted from [Peter Bui's](https://engineering.nd.edu/faculty/peter-bui/) Python scripting assignment, which is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+<!-- This homework assignment was adapted from [Peter Bui's](https://engineering.nd.edu/faculty/peter-bui/) [Python scripting assignment](https://www3.nd.edu/~pbui/teaching/cse.20289.sp20/homework05.html), which is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). -->

@@ -1,5 +1,5 @@
 """
-HW 2: Scripting - Reddit testing
+HW 2: Scripting - New York Times testing
 
 Collaboration is NOT permitted.
 
@@ -16,9 +16,9 @@ which is licensed under the MIT license agreement.
 
 import unittest
 
-from reddit import build_parser, load_reddit_data, format_reddit_data
+from nytimes import build_parser, load_data, format_data
 
-class RedditTestCases(unittest.TestCase):
+class NYTTestCases(unittest.TestCase):
 
     def test_build_parser(self):
         """tests the returned ArgumentParser from build_parser()"""
@@ -29,24 +29,24 @@ class RedditTestCases(unittest.TestCase):
             parser.parse_args(['-h'])
 
         # test default values
-        test_url = 'https://www.reddit.com/r/python/.json'
-        args = parser.parse_args([test_url])
-        self.assertEqual(args.url, test_url)
+        test_section = 'home'
+        args = parser.parse_args([test_section])
+        self.assertEqual(args.section, test_section)
         self.assertEqual(args.n, 10)
-        self.assertEqual(args.o, "score")
+        self.assertEqual(args.o, "title")
         self.assertEqual(args.t, 60)
 
 
-    def test_load_reddit_data(self):
-        """Tests the returned dict from load_reddit_data()."""
+    def test_load_data(self):
+        """Tests the returned dict from load_data()."""
         raise NotImplementedError
 
 
-    def test_format_reddit_data(self):
-        """Tests the sorted and formatted list from format_reddit_data()."""
+    def test_format_data(self):
+        """Tests the sorted and formatted list from format_data()."""
         raise NotImplementedError
 
 
 if __name__ == "__main__":
-    """Run your unit tests by python3 test_reddit.py"""
+    """Run your unit tests by python3 test_nytimes.py"""
     unittest.main()
