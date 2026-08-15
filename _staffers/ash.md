@@ -1,7 +1,7 @@
 ---
 name: Ash Fujiyama
 role: Instructor
-email: afuji@seas.upenn.edu
+email: afuji@engineering.upenn.edu
 photo: afuji.jpg
 pronouns: they/them
 meta:

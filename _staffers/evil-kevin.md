@@ -1,6 +1,6 @@
 ---
 name: Evil Kevin
-role: Teaching Assistant
+role: TA (used to be "Teaching Assistant")
 email: me@example.com
 website: https://kevinl.info
 pronouns: he/him
