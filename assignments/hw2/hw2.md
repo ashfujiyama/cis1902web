@@ -170,11 +170,11 @@ Since we're pulling data from an active website, the articles will likely have c
 
 ### The New York Times API
 
-When you read the news online on [https://www.nytimes.com/](https://www.nytimes.com/), you're using the New York Time's *user interface (UI)* to access their news data.  Buttons, clickable links, and navigation menus are a few examples of ways that you (the user) can interact with the webpage.
+When you read the news online on [https://www.nytimes.com/](https://www.nytimes.com/), you're using the New York Time's *user interface (UI)* to access their news data.  Buttons, clickable links, and navigation menus are a few examples of ways that you (the user) can interact with the service.
 
-On the other hand, your script will be utilizing NY Times' *application programming interface (API)* to access any NYT article information.  An API is specifically designed for other software (such as your terminal script) to access the services offered, and is not designed for direct human use.  Instead of clicking buttons or navigating visual menus, our script will be making "API calls" to browse the NYT news.
+On the other hand, your script will be utilizing NY Times' *application programming interface (API)* to access any NYT article information.  An API is specifically designed for other software (such as your terminal script) to access the services offered, and is not designed for direct human use (with the exception of programmers).  Instead of clicking buttons or navigating visual menus, our script will be making "API calls" to browse the NYT news.
 
-It is lucky that the New York Times not only has their own API, but it is also free to use!  Some websites don't release their own APIs (meaning you would need to find a 3rd party API) or charge money for access.  Some websites may offer a free tier, but would impose limits that may incentivize the user to pay for upgraded access.  Common limits include:
+It is lucky that the New York Times not only has their own API, but it is also free to use!  Some apps don't release their own APIs (meaning you would need to find a 3rd party API) or charge money for access.  Some apps may offer a free tier, but would impose limits that may incentivize the user to pay for upgraded access.  Common limits include:
 1. Rate-limit establishment: Users can only make a certain number of API calls per hour (or day).  For example, NYT has a limit of 5 API calls per minute, and they recommend having your script sleep for 12 seconds in between calls.
 2. Delayed Return Values: While the NYT returns real-time data (returned articles match what the NYT is currently displaying on their webpage), other services may return data that is 12 or 24 hours out-of-date.
 
@@ -224,7 +224,7 @@ url = "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=abc123abc123"
 response = requests.get(url)
 ```
 
-{: .note }
+{: .warning }
 You are required to use the following line in your code: `response = requests.get(url)`.  The autograder will not work if you don't use this exact line in your `load_data()` function!
 
 Notice how the URL contains all of the necessary context for the NYT to return the information we need.  You can see "topstories" which indicates the API we're using, and "arts" is the news section we want to get articles from.  We also included our API key in the URL (though you will need to replace `abc123abc123` with your actual API key associated with your NYT Developer account).
@@ -329,8 +329,8 @@ Outside of the unit test coverage, we will check the functionality of your imple
 
 <!-- **Since the subreddits are live and post scores can change in real time, we do not expect the outputs to match exactly.** -->
 
-{: .warning }
-When you submit to Gradescope, the four commands will not be autograded, but you will see the output we will use to manually check the functionality of your script, so you can verify the output is similar:
+{: .note }
+When you submit to Gradescope, the four commands will be autograded, and you will see the output we will use to manually check the functionality of your script, so you can verify the output is similar:
 
 {:.centered.imgmax}
 ![](../hw2_functionality.png)
