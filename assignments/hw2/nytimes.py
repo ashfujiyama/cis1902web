@@ -98,7 +98,7 @@ def print_data(formatted_data):
     """
     Print NY Times data based on specified attributes using the following format:
 
-      print("{index}.\t{title} (Date: {time})\n\t{url}\n".format(...))
+      print("{index}.\t{title} (Date: {time})\n\t{url}".format(...))
 
     Note: you don't have to write unit tests for this function, and it will be
     ignored by the code coverage checker. We will be checking the output of

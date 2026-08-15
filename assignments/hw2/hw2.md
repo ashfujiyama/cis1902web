@@ -100,67 +100,49 @@ When you run `python3 nytimes.py -h` you may have a slightly different output de
 $ python3 nytimes.py science
 0.      A.I. Is Finding Sperm Where Doctors Couldn’t (Date: 2026-08-11T05:02:13-04:00)
         https://www.nytimes.com/2026/08/11/science/ai-infertile-men-sperm.html
-
 1.      An Electric Motorcycle Revolution (Date: 2026-08-11T13:47:26-04:00)
         https://www.nytimes.com/2026/08/11/climate/electric-motorcycle-boom-developing-countries.html
-
 2.      As Europe Faces Another Heat Wave, Travelers Are Forced to A (Date: 2026-08-12T14:46:04-04:00)
         https://www.nytimes.com/2026/08/12/travel/europe-travel-tourism-wildfires-heat-waves.html
-
 3.      Early-Onset El Niño (Date: 2026-08-13T15:28:25-04:00)
         https://www.nytimes.com/2026/08/13/climate/el-nino-effects.html
-
 4.      Federal Job Cuts Are Making Wildfires Harder to Fight (Date: 2026-08-14T05:02:10-04:00)
         https://www.nytimes.com/2026/08/14/climate/wildfires-forest-service-trump-cuts.html
-
 5.      Federal Judge Orders Pentagon to Lift Freeze on Wind Power (Date: 2026-08-06T14:24:31-04:00)
         https://www.nytimes.com/2026/08/06/climate/pentagon-reviews-wind-farms-court-order.html
-
 6.      Frenzy for Solar Eclipse Glasses Takes Over London (Date: 2026-08-11T11:17:06-04:00)
         https://www.nytimes.com/2026/08/11/world/europe/solar-eclipse-glasses-uk.html
-
 7.      From Nest to Deathbed, Jackie the Eagle Entranced California (Date: 2026-08-10T15:58:19-04:00)
         https://www.nytimes.com/2026/08/10/us/jackie-bald-eagle-california-dead.html
-
 8.      Get Ready for Europe’s First Total Solar Eclipse in Decades (Date: 2026-08-10T00:01:06-04:00)
         https://www.nytimes.com/2026/08/10/science/europe-total-solar-eclipse-how-to-watch.html
-
 9.     How Cyclospora Evaded the U.S. Food Safety System to Sicken  (Date: 2026-08-15T05:01:56-04:00)
         https://www.nytimes.com/2026/08/15/health/cyclospora-invesigation-fda.html
-
 
 # view the 5 most recent articles from the home page
 $ python3 nytimes.py home -n 5
 0.      An Island Used to Storms Readies for One of the Strongest in (Date: 2026-08-15T14:26:29-04:00)
         https://www.nytimes.com/2026/08/15/weather/hurricane-lala-hawaii-emergency-prep.html
-
 1.      As China Pushes to Expand in Asia, Trump Focuses on Iran (Date: 2026-08-15T05:01:01-04:00)
         https://www.nytimes.com/2026/08/15/us/politics/china-expansion-asia-trump-iran.html
-
 2.      Canadian Petition to Expel U.S. Ambassador Pete Hoekstra Tak (Date: 2026-08-15T05:02:15-04:00)
         https://www.nytimes.com/2026/08/15/world/canada/hoekstra-ambassador-petition-canada-trump.html
-
 3.      Central Synagogue Attack Rattles Jewish New Yorkers (Date: 2026-08-15T15:04:11-04:00)
         https://www.nytimes.com/2026/08/15/nyregion/central-synagogue-shabbat-assault.html
-
 4.      Democrats Reshape 2028 Presidential Primary Calendar, and Pu (Date: 2026-08-15T14:27:45-04:00)
         https://www.nytimes.com/2026/08/15/us/politics/democrats-new-presidential-primary-calendar.html
-
 
 # view 2 food articles sorted by time (most recently published articles first) with shortened titles
 $ python3 nytimes.py business -n 2 -o time -t 30
 0.      ‘I Will be Making This on Repe (Date: 2026-08-15T11:00:07-04:00)
         https://www.nytimes.com/2026/08/15/dining/i-will-be-making-this-on-repeat-until-i-cant-look-at-eggs-or-tomatoes-anymore.html
-
 1.      The Original Viral Recipe (Date: 2026-08-15T10:00:05-04:00)
         https://www.nytimes.com/2026/08/15/dining/the-original-viral-recipe.html
-
 
 # view 2 articles from the world section sorted by title
 $ python3 nytimes.py world -n 2 -o title
 0.      $10 Million in Gold Found Buried Under Former Brewery in Bel (Date: 2026-08-15T15:36:29-04:00)
         https://www.nytimes.com/2026/08/15/world/europe/gold-bars-coins-belgium.html
-
 1.      8 Matisse Works, Looted from Library in Brazil, Are Recovere (Date: 2026-08-14T06:56:23-04:00)
         https://www.nytimes.com/2026/08/14/world/americas/matisse-stolen-art-found-sao-paulo-brazil-heist.html
 ```
@@ -193,7 +175,7 @@ These steps can also be found at [https://developer.nytimes.com/get-started](htt
 
 ## Implementation details
 
-### `nytimes.py`
+### nytimes.py
 
 You will implement the following functions:
 
