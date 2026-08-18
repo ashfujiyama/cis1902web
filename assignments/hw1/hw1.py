@@ -167,7 +167,7 @@ class BST:
 
 if __name__ == '__main__':
     """
-    Feel free to test your implementation here by running "python3 hw2.py" in
+    Feel free to test your implementation here by running "python3 hw1.py" in
     your terminal.
     """
     my_bst = BST()

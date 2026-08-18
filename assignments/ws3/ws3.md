@@ -15,4 +15,4 @@ Worksheet 3: Pandas
 
 ## Where is it?
 WS3 is meant to be done in google colab. You should download the notebook file below and import it into google colab. The specification is inside the notebook itself, so there isn't much to see here :)
-- [ws3.ipynb](ws3.ipynb)
+- [ws3.ipynb](./ws3.ipynb)
