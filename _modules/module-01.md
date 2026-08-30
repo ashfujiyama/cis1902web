@@ -13,8 +13,8 @@ Oct 19
 
 Oct 26
 : [Jupyter Notebook/Pandas](#)
-<!-- : **WS 3**{: .label .label-blue }[Pandas](../assignments/ws3/ws3)
-: **Final Project**{: .label .label-red }[Project](../assignments/project/project) -->
+<!-- : **WS 3**{: .label .label-blue }[Pandas](../assignments/ws3/ws3) -->
+<!-- : **Final Project**{: .label .label-red }[Project](../assignments/project/project) -->
 
 Nov 2
 : [Deep Learning](#)
