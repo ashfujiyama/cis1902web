@@ -1,10 +1,10 @@
 """Worksheet 0"""
 
-# Task 1: type your favorite "Zen of Python" saying here as a single line comment
+# Task 0: type your favorite "Zen of Python" saying here as a single line comment
 
 
 def wordle():
-    """Task 2: a function that runs a wordle game"""
+    """Task 1: a function that runs a wordle game"""
     secret = input("What is the secret word? ")
 
     # this print statement is only here to show you how input() works
@@ -17,18 +17,29 @@ if __name__ == '__main__':
     wordle()
 
 """
-Task 3: Tell us about yourself (can use bullet points)
+Task 2: Tell us about yourself (can use bullet points)
 
-What is your major?
+a) What is your major?
 
-What CS courses have you taken before?  What CS classes are you taking right now?
+b) Are there other CS classes you're taking this semester? Which ones?
 
-What programming languages are you familiar with?  How familiar are you with each one?
+c) When would you like for our office hours to be?  You may check as many time slots as you would like.
+   (check a time slot by adding an X like this: [X])
+    [ ] Monday 9am-10am
+    [ ] Monday 10am-11am
+    [ ] Monday 11am-12pm
+    [ ] Monday 2pm-3pm
+    [ ] Monday 7pm-8pm
+    [ ] Monday 8pm-9pm
+    [ ] Thursday 10am-11am
+    [ ] Thursday 11am-12pm
+    [ ] Thursday 2pm-3pm
+    [ ] Thursday 7pm-8pm
+    [ ] Thursday 8pm-9pm
 
-What made you want to take this course?  What are you looking to get out of this course?
+d) If none of the above times are ideal for you, what other times would work?
 
-When would you like for our office hours to be?  You may list as many time slots as you would like.
 
-Anything else you want for me to know?
+e) Anything else you want for me to know?
 
 """

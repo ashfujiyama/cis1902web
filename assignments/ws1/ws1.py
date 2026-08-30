@@ -3,7 +3,7 @@
 
 def transpose(mat):
     """
-    Task 1: transpose a given matrix.
+    Task 0: transpose a given matrix.
 
     With zip() and either map() or a list comprehension, this can be
     implemented in one line!
@@ -19,7 +19,7 @@ def transpose(mat):
 
 def evens_and_odds(n):
     """
-    Task 2: Prints all pairs of numbers between 0 and n (exclusive) such that
+    Task 1: Prints all pairs of numbers between 0 and n (exclusive) such that
     the first number is even and the second one is odd.
 
     Try implementing this with and without list comprehensions. What do you
@@ -35,7 +35,7 @@ def evens_and_odds(n):
 
 
 """
-Task 3: course feedback
+Task 2: course feedback
 1. On a scale of 0 to 10, how have the lectures been so far?
 
 2. What comments do you have for future lectures and assignments? What did you

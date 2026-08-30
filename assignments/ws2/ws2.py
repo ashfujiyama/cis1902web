@@ -17,7 +17,7 @@ def list_transpose(mat):
 
 def benchmark_transpose(n_trials=100, mat_size=1000):
     """
-    Task 1: performance benchmarking np.transpose() and list_transpose().
+    Task 0: performance benchmarking np.transpose() and list_transpose().
 
     How much faster is the NumPy implementation for the default parameters?
 
@@ -62,7 +62,7 @@ def benchmark_transpose(n_trials=100, mat_size=1000):
 
 def clip(arr, max_val):
     """
-    Task 2: NumPy finger exercises
+    Task 1: NumPy finger exercises
 
     Re-assigns elements of arr greater than the given max_val to max_val.
 
@@ -99,22 +99,22 @@ if __name__ == '__main__':
     # set a random seed so that code is reproducible
     np.random.seed(42)
 
-    # Task 1
+    # Task 0
     benchmark_transpose()
 
-    # Task 2
+    # Task 1
     A = np.random.randint(0, 8, size=(5,5))
     print(A)
     print(clip(A, 6))
 
-    # Task 3
+    # Task 2
     # prevent NumPy from printing scientific notation
     np.set_printoptions(suppress=True,
                         formatter={'float_kind':'{:.3f}'.format})
     secs = np.array([60, 120])
     print(time_units(secs))
 
-    # Task 4
+    # Task 3
     """
     Please place your demo feedback here.
     """

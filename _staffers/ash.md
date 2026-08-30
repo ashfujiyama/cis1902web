@@ -8,4 +8,4 @@ meta:
   Office Hours: Levine 269 C @ time TBD
 ---
 
-I am a master's student in computer science with a passion for teaching! I've TA'd systems courses in the past, and I hope to be teaching faculty some day!
+I am a master's student in computer science with a passion for teaching! I've TA'd systems courses in the past, and I hope to be teaching faculty some day!  Always down to talk, whether it's about the course, CS, or anything else :)

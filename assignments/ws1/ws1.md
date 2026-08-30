@@ -140,7 +140,7 @@ Or a list comprehension:
 
 Here we see that the `map()/filter()` implementation is a bit clunky. In fact, Guido van Rossum, the creator of Python, [is of the opinion](https://www.artima.com/weblogs/viewpost.jsp?thread=98196) that `map()` and `filter()` should be phased out in favor of comprehensions. However, there are still situations where these functions may be useful.
 
-### Task 1: Matrix transpose [0.5 points]
+### Task 0: Matrix transpose [0.5 points]
 
 Let's implement a matrix `transpose()` function, where we represent square 2D matrices with a list of lists:
 
@@ -205,7 +205,7 @@ The conditionals also are read as if they are applied to the subsequent level of
 [2]
 ```
 
-### Task 2: Evens and odds [0.5 points]
+### Task 1: Evens and odds [0.5 points]
 
 Let's implement a function called `evens_and_odds()`. It takes an integer $n$ as input, and returns a list of all pairs (represented as tuples) of numbers between $0$ and $n-1$ where the first number is even and the second number is odd:
 
@@ -216,7 +216,7 @@ Let's implement a function called `evens_and_odds()`. It takes an integer $n$ as
 
 Play with the implementation of this function using comprehensions or standard for loops. What approach do you prefer in terms of code readability?
 
-## Task 3: Course feedback [1 point]
+## Task 2: Course feedback [1 point]
 
 In a multi-line comment, please respond to the following questions:
 

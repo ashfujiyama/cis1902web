@@ -47,7 +47,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 {: .note }
 If you have issues getting Python installed, or have a different development environment (such as WSL on Windows), let us know on [Ed Discussion](https://edstem.org/us/courses/33747) and we can help out!
 
-## Task 1: The Zen of Python [0.5 points]
+## Task 0: The Zen of Python [0.5 points]
 
 Once inside the interpreter, we can run commands interactively just like what we saw in lecture. I encourage you to play around and familiarize yourself with the interpreter, as it is a nice way to debug and prototype snippets of code. There's a little easter egg if we run the code `import this`:
 
@@ -69,7 +69,7 @@ The so-called "Zen of Python" is printed to your terminal (are we sure Python pr
 
 Once you're done with the interpreter, type `exit()` or hit `ctrl-d` to exit.
 
-## Task 2: Saying Wordle [1 point]
+## Task 1: Saying Wordle [1 point]
 Now that you have `ws0.py` open in an editor, you'll see that we've provided a `wordle()` function definition in it, with a triple-quoted comment describing the function. You can see the docstring labelling it as the second task and providing a brief description of the function. There is more to be said about docstrings as well, but for now let's look at the end of the function:
 
 ```python
@@ -159,7 +159,7 @@ better luck next time! the word was bingo
 Hint: to print the clues after a guess is made, you need 5 separate print statements to happen.  To get all the printed text on a single line, add `end = ""`as a second argument to the print function so it looks like this: print("_", end=””).  This indicates to the function to not add a newline character at the end of the printed statement (which is the default ending and causes the multiple print statements to be separated by line).
 
 
-## Task 3: Tell us about yourself [0.5 points]
+## Task 2: Tell us about yourself [0.5 points]
 
 Finally, we'd like to get to know everyone in the course a little better. In the **multi-line** triple-quote comment provided, fill out your responses to the following questions:
 

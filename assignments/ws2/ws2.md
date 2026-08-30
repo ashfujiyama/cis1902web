@@ -25,7 +25,7 @@ Worksheet 2: Benchmarking & NumPy
 
 One of the things I love about the scientific computing packages in Python is how easy and accessible they make experimentation and simulation -- you have your own laboratory and numerical sandbox sitting right here on your machine!
 
-### Task 1: How fast can we matrix transpose? [0.5 points]
+### Task 0: How fast can we matrix transpose? [0.5 points]
 
 As discussed in class, NumPy is the go-to numerical computing framework in Python, with functionality comparable to Matlab. Because much of NumPy compiles down into C code at runtime, we are able to reap the performance benefits of C while maintaining the readability and conciseness of Python. Let's see this in action with a simple benchmarking experiment -- hop over to the provided `ws2.py` starter file.
 
@@ -88,7 +88,7 @@ We've also provided a partial implementation of the `benchmark_transpose()` func
 
 ## NumPy finger exercises
 
-### Task 2: Logical indexing practice: `clip()` [0.5 points]
+### Task 1: Logical indexing practice: `clip()` [0.5 points]
 
 We have the following code that *clips* values in 2D NumPy array to a given maximum value:
 
@@ -135,7 +135,7 @@ array([[1, 6, 3, 1, 3],
 
 However, we can improve the implementation of `clip` through logical indexing. Give a more concise implementation of `clip` using concepts from lecture -- this can be done in one line!
 
-### Task 3: Broadcasting practice: `time_units()` [0.5 points]
+### Task 2: Broadcasting practice: `time_units()` [0.5 points]
 
 [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html) is one of the most powerful concepts in NumPy, but it is also one that takes some getting used to. So, let's review the idea of NumPy array shapes and what happens when using operators on differently shaped arrays. We can fire up an interactive session and play with some array operations:
 
@@ -200,9 +200,9 @@ Specifically in this case, we are taking each row element of `a.reshape(-1,1)` a
 
 As a final piece of practice, try implementing the `time_units()` function in `ws2.py` using broadcasting, which takes in a 1D array of seconds and generates a matrix of times, with the columns corresponding to seconds, minutes, hours, and days. `time_units()` can also be done in one line, no `for` loops needed.
 
-### Task 4: demo feedback [0.5 points]
+### Task 3: demo feedback [0.5 points]
 
-The last two lectures of the "Pythonic Foundations" of the course incorporated more live demos of implementing programs from scratch. What comments do you have for future demos in lecture? What did you like? What suggestions do you have for change? 
+The last two lectures of the "Pythonic Foundations" of the course incorporated more live demos of implementing programs from scratch. What comments do you have for future demos in lecture? What did you like? What suggestions do you have for change?
 
 Please write your response in the multiline comment provided in the `__main__` conditional of the worksheet.
 
