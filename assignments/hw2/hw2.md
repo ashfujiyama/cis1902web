@@ -6,8 +6,8 @@ description: >-
 active_tab: homework
 parent: Assignments
 nav_order: 5
-nav_exclude: false
-search_exclude: false
+nav_exclude: true
+search_exclude: true
 ---
 
 Homework 2: Scripting and Testing
