@@ -3,6 +3,8 @@ layout: page
 title: Syllabus
 description: >-
     Course policies and information.
+nav_exclude: true
+search_exclude: true
 ---
 
 # Syllabus
@@ -52,7 +54,7 @@ The grading breakdown is as follows:
 ### Late Assignments
 Everybody gets five late days for homeworks, and up to two can be used for a single assignment. We'll track late submissions via Gradescope and will record your late day usage automatically, though definitely feel free to ask us at any point in the semester how many late days you have remaining. Beyond these, any late day will incur a penalty of 20% as of the change of date.
 
-Late days only apply to homeworks, so they may not be used for worksheets or the final project. 
+Late days only apply to homeworks, so they may not be used for worksheets or the final project.
 
 ### Collaboration
 You are permitted (and encouraged) to discuss the homework problems with other class members, but these discussions are to be limited to high-level concepts. In particular, you are absolutely not permitted to copy/share code or implementation details. Similarly, you are not permitted to use or consult code found on the internet for any of your assignments. The only context where it is permitted to share code is during the final project, during which you are allowed to collaborate with your team members.
