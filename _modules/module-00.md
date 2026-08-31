@@ -3,7 +3,7 @@ title: Pythonic Foundations
 ---
 
 Aug 31
-: [Logistics, Python Basics](#)
+: [Logistics, Python Basics](../lectures/lec00.pdf)
   : **Optional Reading** [What is python?](https://www.python.org/doc/essays/blurb/)
 : **WS 0**{: .label .label-blue }[Getting Started 🐍](../assignments/ws0/ws0)
 

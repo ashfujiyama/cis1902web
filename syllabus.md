@@ -21,7 +21,7 @@ search_exclude: true
 ## Course Components
 
 ### Lecture
-Lecture slides, recordings, and assignments will be linked on the [schedule page](#schedule].
+Lecture slides, recordings, and assignments will be linked on the [schedule page](#schedule).
 
 ### Assignments
 Exact due dates for assignments will be shown in Gradescope, but in general:
