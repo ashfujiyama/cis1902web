@@ -6,8 +6,8 @@ description: >-
 active_tab: homework
 parent: Assignments
 nav_order: 4
-nav_exclude: false
-search_exclude: false
+nav_exclude: true
+search_exclude: true
 ---
 
 Homework 1: Binary Search Trees
