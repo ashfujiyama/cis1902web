@@ -18,6 +18,10 @@ timeline:
   - '4:30 PM'
   - '5:00 PM'
   - '5:30 PM'
+  - '6:00 PM'
+  - '6:30 PM'
+  - '7:00 PM'
+  - '7:30 PM'
 schedule:
   - name: Monday
     events:
@@ -27,6 +31,18 @@ schedule:
         location: AGH 214
   - name: Tuesday
   - name: Wednesday
+    events:
+      - name: Foram's Office Hours
+        class: office-hours
+        start: 6:00 PM
+        end: 7:30 PM
+        location: Online
   - name: Thursday
+    events:
+      - name: Ash's Office Hours
+        class: office-hours
+        start: 12:00 PM
+        end: 3:00 PM
+        location: Levine 269 C
   - name: Friday
 ---
