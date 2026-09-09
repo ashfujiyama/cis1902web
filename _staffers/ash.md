@@ -5,7 +5,7 @@ email: afuji@engineering.upenn.edu
 photo: afuji.jpg
 pronouns: they/them
 meta:
-  Office Hours: Levine 269 C @ time TBD
+  Office Hours: Levine 269 C @ 12-3PM Thursday
 ---
 
 I am a master's student in computer science with a passion for teaching! I've TA'd systems courses in the past, and I hope to be teaching faculty some day!  Always down to talk, whether it's about the course, CS, or anything else :)
