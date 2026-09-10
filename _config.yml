@@ -23,9 +23,9 @@ exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
 math: mathjax
 
 # link variables
-gradescope_url: https://www.gradescope.com/
-edstem_url: https://edstem.org
-canvas_url: https://canvas.upenn.edu
+gradescope_url: https://www.gradescope.com/courses/1219501
+edstem_url: https://edstem.org/us/courses/105235
+canvas_url: https://canvas.upenn.edu/courses/1950766
 
 # Theme settings
 remote_theme: just-the-docs/just-the-docs@v0.10.1
@@ -35,11 +35,11 @@ heading_anchors: true
 permalink: pretty
 aux_links:
   Canvas:
-    - https://canvas.upenn.edu/
+    - https://canvas.upenn.edu/courses/1950766
   Edstem:
-    - https://edstem.org/
+    - https://edstem.org/us/courses/105235
   Gradescope:
-    - https://www.gradescope.com
+    - https://www.gradescope.com/courses/1219501
 footer_content:
 
 # Collections for website data
