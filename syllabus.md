@@ -68,11 +68,11 @@ Other ways to get participation credit:
 - Ed discussion (either answering or asking questions)
 
 ### Resubmission Policy
-Instead of a late day policy, we will give you the chance to request a previous assignment to be reopened.  This will be done on a Google Form released every other Monday, specifically the odd-numbered weeks.  Only one assignment may be reopened on Gradescope at a time, and remains open for either one week (for worksheets) or two weeks (homeworks).
+Instead of a late day policy, we will give you the chance to request a previous assignment to be reopened.  This will be done on a Google Form released every other Monday, specifically the odd-numbered weeks.  Forms will generally be released before lecture and close at 11:59 pm the same day.  Only one assignment may be reopened on Gradescope at a time, and remains open for either one week (for worksheets) or two weeks (homeworks).
 
 The intention surrounding this policy is firstly to let you act on any improvements you've made within the semester that came after an assignment's due date.  Every student learns at a different speed, and my hope is that this policy reduces the "penalty" felt when it takes longer to fully grasp and leverage a concept.  If you're interested, [you can learn more about mastery grading here](https://teaching.unl.edu/resources/alternative-grading/mastery-grading/).  The second use case of a resubmission policy is to assist the process of catching up after falling behind.  As a student myself, I've fallen behind in class for various reasons, and I don't judge students who find themselves needing to catch up.  If you believe extra support would be helpful during a catchup period, please refer to the section above: [Getting Help](#getting-help).
 
-Resubmissions apply to both worksheets and homeworks, but are best used on homework assignments because the worksheets are completion-based and don't receive feedback us.
+Resubmissions apply to both worksheets and homeworks, but are best used on homework assignments because the worksheets are completion-based and don't receive feedback us.  Due to there not being a late-day policy, Gradescope submissions are locked at the exact due time.  Any assignments that are missing a submission by this time will be graded a 0 (though you can always improve that score by reopening it).
 
 If there is something that comes up that prevents you from participating in class or completing assignments, please contact the instructor.  I don't need to know all of the details (you have a right to privacy), and I will work with you to find a suitable arrangement.
 
