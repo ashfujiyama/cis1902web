@@ -170,8 +170,8 @@ For homeworks this semester, we will select function(s) that will be read closel
 
 The overall goal with the close reads is to provide more fine-grained feedback as opposed to just running a style checker like `pycodestyle` across the entire assignment, which is also useful but less personalized.
 
-{: .note }
-For this assignment, we will be making a close read of `list_matches()` and any helper functions you might write for it.
+<!--
+For this assignment, we will be making a close read of `list_matches()` and any helper functions you might write for it. -->
 
 Since this is the first homework we will grade accordingly (leniently 🙂), and will provide feedback in the Gradescope rubric so that you can continue to improve your coding skills.  Remember, the HW resubmission policy will give you the opportunity to directly apply what you've learned from our feedback to past homeworks (with the added bonus of improving your HW grade)!
 
@@ -185,8 +185,8 @@ Name, PennKey, and hours filled in | 0.5
 `create_trie()`| 2
 `in_trie()`| 2
 `list_matches()`| 2
- `list_matches()` code style | 1
- **Total** | 10
+ code style | 4
+ **Total** | 13
 
 ## Testing your code and submission
 
@@ -194,4 +194,10 @@ You can test your code in the `main()` method that we included to check the beha
 
 You will upload your `hw0.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission. We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the due date without penalty.
 
-Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
+{: .note }
+Gradescope will lock the homework assignment after the due date.  If the submission is missing, the assigned grade for this HW will be 0.  Keep in mind that you will be able to request the assignment to be reopened in the bi-weekly Google Form.
+<!--
+Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly. -->
+
+
+Please note that if you are resubmitting this homework (and other homework assignments in the future), it may take time for your grade to update, as myself and the TAs will be manually regrading for style points!
