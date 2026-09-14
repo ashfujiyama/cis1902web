@@ -11,7 +11,7 @@ Sep 7
 : No Class (Labor Day)
 
 Sep 14
-: [Data Structures](#)
+: [Data Structures](../lectures/lec01.pdf)
 : **HW 0**{: .label .label-red }[Tries 🫧](../assignments/hw0/hw0)
 
 Sep 21
