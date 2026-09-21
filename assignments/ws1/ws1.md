@@ -6,8 +6,8 @@ description: >-
 active_tab: homework
 parent: Assignments
 nav_order: 3
-nav_exclude: true
-search_exclude: true
+nav_exclude: false
+search_exclude: false
 ---
 
 Worksheet 1: FP and List Comprehension 📋
