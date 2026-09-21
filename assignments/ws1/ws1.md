@@ -220,10 +220,12 @@ Play with the implementation of this function using comprehensions or standard f
 
 In a multi-line comment, please respond to the following questions:
 
-1. On a scale of 0 to 10, how have the lectures been so far? (0 = not useful at all and 10 = extremely valuable)
+1. On a scale of 0 to 10, how have the lectures (not including Ed Lessons) been so far? (0 = not useful at all and 10 = extremely valuable)
 
-2. What comments do you have for future lectures and assignments? What did you like? What suggestions do you have for change?
+2. On a scale of 0 to 10, how have the Ed Lessons been so far? (0 = not useful at all and 10 = extremely valuable)
 
-3. What remaining questions do you have about the topics we have covered in the course so far?
+3. What comments do you have for future lectures, activities, and assignments? What did you like? What suggestions do you have for change?
+
+4. What remaining questions do you have about the topics we have covered in the course so far?
 
 That's it, worksheet 1 complete!

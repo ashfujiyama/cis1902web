@@ -15,9 +15,10 @@ Sep 14
 : **HW 0**{: .label .label-red }[Tries 🫧](../assignments/hw0/hw0)
 
 Sep 21
-: [Pythonic Programming I](#)
+: [Pythonic Programming I](#../lectures/lec02.pdf)
   : **Optional Reading** [Namespaces](https://docs.python.org/3/tutorial/classes.html#python-scopes-and-namespaces)
-<!-- : **WS 1**{: .label .label-blue }[FP and List Comprehension 📋](../assignments/ws1/ws1) -->
+: **Code:** [Format, Exceptions, and Comprehensions](https://drive.google.com/file/d/15QrZL_jMbxohmomQXFNfy1ZlAJLD7Wvp/view?usp=sharing)
+: **WS 1**{: .label .label-blue }[FP and List Comprehension 📋](../assignments/ws1/ws1)
 
 Sep 28
 : [Pythonic Programming II](#)
