@@ -31,18 +31,18 @@ schedule:
         location: AGH 214
   - name: Tuesday
   - name: Wednesday
+  - name: Thursday
     events:
       - name: Foram's Office Hours
         class: office-hours
-        start: 6:00 PM
-        end: 7:30 PM
+        start: 7:00 PM
+        end: 8:30 PM
         location: Online
-  - name: Thursday
+  - name: Friday
     events:
       - name: Ash's Office Hours
         class: office-hours
-        start: 12:00 PM
-        end: 3:00 PM
-        location: Levine 269 C
-  - name: Friday
+        start: 4:00 PM
+        end: 6:00 PM
+        location: Levine 269C
 ---
