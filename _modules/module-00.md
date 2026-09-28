@@ -21,8 +21,8 @@ Sep 21
 : **WS 1**{: .label .label-blue }[FP and List Comprehension 📋](../assignments/ws1/ws1)
 
 Sep 28
-: [Pythonic Programming II](#)
-<!-- : **HW 1**{: .label .label-red }[Binary Search Trees 🌳](../assignments/hw1/hw1) -->
+: [Pythonic Programming II](https://drive.google.com/file/d/1UTuygRv7u21tdSdlXNf1rK9Wn3sutXo-/view?usp=sharing)
+: **HW 1**{: .label .label-red }[Binary Search Trees 🌳](../assignments/hw1/hw1)
 
 Oct 5
 : [Modules, Testing, Scripting](#)
