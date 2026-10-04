@@ -6,8 +6,8 @@ description: >-
 active_tab: homework
 parent: Assignments
 nav_order: 5
-nav_exclude: true
-search_exclude: true
+nav_exclude: false
+search_exclude: false
 ---
 
 Homework 2: Scripting and Testing
@@ -327,6 +327,7 @@ No libraries outside of `argparse`, `json`, `requests`, and `unittest` may be im
 | Section | Points |
 |---------|--------|
 Name, PennKey, and hours filled in | 0.5
+Reflection question filled out | 0.5
 All functions in `nytimes.py` are implemented | 0.5
 All test cases in `test_nytimes.py` are implemented | 0.5
 Test cases achieve at least 80% code coverage | 3
@@ -334,12 +335,15 @@ Test cases achieve at least 80% code coverage | 3
 `python3 nytimes.py science -n 5` correctness| 1
 `python3 nytimes.py world -n 2 -o time -t 30` correctness | 1
 `python3 nytimes.py us -n 2 -o title` correctness | 1
-code style | 3
-**Total** | 11.5
+code style | 4
+**Total** | 13
 
 ## Submission
 
-You will upload both your `nytimes.py` and `nytimes.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission -- **be sure to upload both files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome
+{: .warning }
+Before submitting to Gradescope, make sure you filled in all the required parts at the top of `nytimes.py`, including the new reflection question!
+
+You will upload both your `nytimes.py` and `test_nytimes.py` code to [**Gradescope**](https://www.gradescope.com/courses) for submission -- **be sure to upload both files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome
 to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
 
 Please keep in mind that the Gradescope automatically locks your homework submissions after the due date, and you will need to request a homework re-opening using the weekly Google Form.

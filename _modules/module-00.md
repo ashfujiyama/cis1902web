@@ -26,4 +26,4 @@ Sep 28
 
 Oct 5
 : [Modules, Testing, Scripting](#)
-<!-- : **HW 2**{: .label .label-red }[Scripting and Testing 📝](../assignments/hw2/hw2) -->
+: **HW 2**{: .label .label-red }[Scripting and Testing 📝](../assignments/hw2/hw2)

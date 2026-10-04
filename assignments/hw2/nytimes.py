@@ -10,6 +10,8 @@ Number of hours spent on homework:
   - time spent on nytimes.py:
   - time spent on test_nytimes.py:
 
+What was the most challenging part of the HW?  How did you figure a way through / debug?
+
 Collaboration is NOT permitted.
 
 In all functions below, the "NotImplementedError" exception is raised, for
