@@ -25,5 +25,5 @@ Sep 28
 : **HW 1**{: .label .label-red }[Binary Search Trees 🌳](../assignments/hw1/hw1)
 
 Oct 5
-: [Modules, Testing, Scripting](#)
+: [Modules, Testing, Scripting](../lectures/lec04.pdf)
 : **HW 2**{: .label .label-red }[Scripting and Testing 📝](../assignments/hw2/hw2)
