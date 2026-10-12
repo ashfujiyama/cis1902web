@@ -3,8 +3,8 @@ title: Data Science
 ---
 
 Oct 12
-: [Scientific computing: NumPy](#)
-<!-- : **WS 2**{: .label .label-blue }[Numpy](../assignments/ws2/ws2) -->
+: [Scientific computing: NumPy](https://drive.google.com/file/d/18MikGjg2l7fndyOTuEsRpLto9NxEAymU/view?usp=sharing)
+: **WS 2**{: .label .label-blue }[Numpy](../assignments/ws2/ws2)
 
 Oct 19
 : [Plotting & Machine Learning](#)
