@@ -42,7 +42,7 @@ Make sure to download the `hw3_utils.py` file and place it in the same directory
 
 ## Setting up
 
-Like HW 3, we will be using third party modules for this homework assignment. Make sure you have NumPy, Scikit-learn, and Matplotlib installed before proceeding with the assignment.
+Like HW 2, we will be using third party modules for this homework assignment. Make sure you have NumPy, Scikit-learn, and Matplotlib installed before proceeding with the assignment.
 
 ``` bash
 $ pip3 install numpy

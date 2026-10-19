@@ -7,7 +7,7 @@ Oct 12
 : **WS 2**{: .label .label-blue }[Numpy](../assignments/ws2/ws2)
 
 Oct 19
-: [Plotting & Machine Learning](#)
+: [Plotting & Machine Learning](https://docs.google.com/presentation/d/1YWAcLAtP0EVUrB_7P1ojnnrdAV5k4f7ZQBjbbXe62Sw/edit?usp=sharing)
   : **Optional Reading** [A few things about machine learning](https://homes.cs.washington.edu/~pedrod/papers/cacm12.pdf)
 <!-- : **HW 3**{: .label .label-red }[Machine Learning](../assignments/hw3/hw3) -->
 
