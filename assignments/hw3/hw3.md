@@ -54,7 +54,7 @@ $ pip3 install scikit-learn
 
 As discussed in lecture, a key consideration in building any machine learning model is the bias-variance tradeoff. Without getting into the mathematical details, we have to balance "bias" (which increases when models are too simple) against "variance" (which increases when models are too complex). We will explore this by running a simulated experiment trying to fit polynomials to a sine curve.
 
-Pictured below is a sample of the curve we will be trying to fit, a result of calling `generate_data()` in the `hw4_utils.py` starter file we provide:
+Pictured below is a sample of the curve we will be trying to fit, a result of calling `generate_data()` in the `hw3_utils.py` starter file we provide:
 
 {:.centered.imgmax}
 ![](../sin_data.png)
@@ -163,7 +163,7 @@ Once you have implemented `fit_knn()` and `standardize()`, use the provided `knn
 
 ### Discussion questions [1 pt]
 
-Once you have run `knn_decision_boundaries()` to generate the `knn_decision_boundaries.png` file, answer these questions **in the multi-line comment** we provide at the bottom of `hw4.py`.
+Once you have run `knn_decision_boundaries()` to generate the `knn_decision_boundaries.png` file, answer these questions **in the multi-line comment** we provide at the bottom of `hw3.py`.
 
 1. Visually, do the malignant and benign examples appear easier to separate with a decision boundary when the data is standardized or when it is not standardized?
 
@@ -172,7 +172,7 @@ Once you have run `knn_decision_boundaries()` to generate the `knn_decision_boun
 ### Other Requirements
 
 {: .warning}
-You are free to use any NumPy function, but you may only use the sklearn functions and classes included in the import statement at the top of `hw4.py`.
+You are free to use any NumPy function, but you may only use the sklearn functions and classes included in the import statement at the top of `hw3.py`.
 
 ## Rubric
 
@@ -200,11 +200,14 @@ All functions implemented | 0.5
 Pennkey, name, and hours estimate | 0.5
 Part 1 | 5.5
 Part 2 | 3.5
- **Total** | 10
+Style | 4
+ <!-- **Total** | 14 -->
 
 
 ## Submission
 
 You will upload your `hw3.py` code and plots `poly_curves.png`, `poly_scores.png` to [**Gradescope**](https://www.gradescope.com/courses/) for submission -- **be sure to upload all files at the same time!** We encourage you to work iteratively, implementing functions one at a time to verify their correctness before moving on to the next function. To facilitate this, you are welcome to submit to Gradescope to verify your code against the autograder as many times as you would like before the submission due date without penalty.
 
-Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly.
+Please keep in mind that the Gradescope automatically locks your homework submissions after the due date, and you will need to request a homework re-opening using the weekly Google Form.
+
+<!-- Please keep in mind that any submission made **after the due date** will be considered late and will either be counted towards your alloted late days or penalized accordingly. -->

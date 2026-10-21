@@ -202,14 +202,14 @@ For the sake of simplicity, you do not need to handle HTTP errors, and you only 
 You can see an example of how to make a GET request below:
 
 ``` python
-url = "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=abc123abc123"
+url = "https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=n0n53n5e57r34m0fCh4r4c73r5"
 response = requests.get(url)
 ```
 
 {: .warning }
 You are required to use the following line in your code: `response = requests.get(url)`.  The autograder will not work if you don't use this exact line in your `load_data()` function!
 
-Notice how the URL contains all of the necessary context for the NYT to return the information we need.  You can see "topstories" which indicates the API we're using, and "arts" is the news section we want to get articles from.  We also included our API key in the URL (though you will need to replace `abc123abc123` with your actual API key associated with your NYT Developer account).
+Notice how the URL contains all of the necessary context for the NYT to return the information we need.  You can see "topstories" which indicates the API we're using, and "arts" is the news section we want to get articles from.  We also included our API key in the URL (though you will need to replace `n0n53n5e57r34m0fCh4r4c73r5` with your actual API key associated with your NYT Developer account).
 
 The New York Times' API will send the data through an HTTP response, formatted in JSON.  This is what `requests.get(url)` returns.  JSON is a way for servers to encode information that a program might request.  The simple key-value representation makes it easy for programmers to dissect and use the information coming from the request.
 

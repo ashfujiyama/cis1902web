@@ -6,6 +6,8 @@ Name:
 PennKey:
 
 Number of hours spent on homework:
+    Part 1:
+    Part 2:
 
 Collaboration is NOT permitted.
 
@@ -22,7 +24,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.datasets import load_breast_cancer
 from sklearn.neighbors import KNeighborsClassifier
 
-from hw4_utils import generate_data, get_breast_cancer_data, \
+from hw3_utils import generate_data, get_breast_cancer_data, \
                       plot_decision_boundary
 
 """Part 1"""
@@ -74,7 +76,7 @@ def fit_poly_regression(X, y, deg):
 
     NOTE: make_poly_features() needs to be implemented
 
-    When initializing your LinearRegression model, leave all parameters at 
+    When initializing your LinearRegression model, leave all parameters at
     their defaults.
 
     Args:
@@ -239,7 +241,7 @@ def knn_decision_boundaries():
     """
     Plots the k-NN decision boundaries for our breast cancer data.
 
-    NOTE: make_train_test_idxs(), standardize(), and fit_knn() need to be 
+    NOTE: make_train_test_idxs(), standardize(), and fit_knn() need to be
     implemented.
 
     Args:
