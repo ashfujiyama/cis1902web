@@ -6,8 +6,8 @@ description: >-
 active_tab: homework
 parent: Assignments
 nav_order: 6
-nav_exclude: true
-search_exclude: true
+nav_exclude: false
+search_exclude: false
 ---
 
 Worksheet 3: Pandas

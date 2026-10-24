@@ -6,8 +6,8 @@ description: >-
 active_tab: homework
 parent: Assignments
 nav_order: 7
-nav_exclude: true
-search_exclude: true
+nav_exclude: false
+search_exclude: false
 ---
 
 Homework 3: Machine Learning
@@ -201,7 +201,7 @@ Pennkey, name, and hours estimate | 0.5
 Part 1 | 5.5
 Part 2 | 3.5
 Style | 4
- <!-- **Total** | 14 -->
+ **Total** | 14
 
 
 ## Submission
