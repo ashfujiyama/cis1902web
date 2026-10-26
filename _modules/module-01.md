@@ -12,8 +12,8 @@ Oct 19
 : **HW 3**{: .label .label-red }[Machine Learning](../assignments/hw3/hw3)
 
 Oct 26
-: [Jupyter Notebook/Pandas](#)
-<!-- : **WS 3**{: .label .label-blue }[Pandas](../assignments/ws3/ws3) -->
+: [Jupyter Notebook/Pandas](https://drive.google.com/file/d/1z2jshkn2XkC13yDgbPmGGHilLZvwiJMO/view?usp=sharing)
+: **WS 3**{: .label .label-blue }[Pandas](../assignments/ws3/ws3)
 <!-- : **Final Project**{: .label .label-red }[Project](../assignments/project/project) -->
 
 Nov 2
