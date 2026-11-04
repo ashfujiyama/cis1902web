@@ -17,5 +17,5 @@ Oct 26
 <!-- : **Final Project**{: .label .label-red }[Project](../assignments/project/project) -->
 
 Nov 2
-: [Deep Learning](#)
-<!-- : **HW 4 part 1**{: .label .label-red }[Deep Learning](../assignments/hw4/hw4) -->
+: [Deep Learning](https://drive.google.com/file/d/1Z9oSGdnPSKPqEFfwgKn7lB5tVXlPN9hF/view?usp=sharing)
+: **HW 4 part 1**{: .label .label-red }[Deep Learning](../assignments/hw4/hw4)
