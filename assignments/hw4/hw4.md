@@ -1,8 +1,8 @@
 ---
 layout: page
-title: HW 4 "Deep Learning & Web Scraping"
+title: HW 4 "Deep Learning"
 description: >-
-    HW 4: "Deep Learning & Web Scraping"
+    HW 4: "Deep Learning"
 active_tab: homework
 parent: Assignments
 nav_order: 8
