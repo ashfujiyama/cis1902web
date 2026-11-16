@@ -9,13 +9,13 @@ Nov 9
 : **HW 5**{: .label .label-red }[Scraping](../assignments/hw5/hw5)
 
 Nov 16
-: [Autograder](#)
+: [Autograder](../lectures/lec11.pdf)
 
 Nov 23
 : [Autograder Pt. 2](#)
 
 Nov 30
-: [Docker for App Deployment](#)
+: [Python Interview Techniques](#)
 
 Dec 7
-: [Lightning topics (Python Interview Questions) and course wrap-up](#)
+: [Lightning topics and course wrap-up](#)
