@@ -1,0 +1,92 @@
+CALCULATOR_CASES = [
+  {
+    "case_name":   "Simple 1",
+    "input":       "0",
+    "score":       5,
+    "description": "A single digit",
+  },
+  {
+    "case_name":   "Simple 2",
+    "input":       "39",
+    "score":       5,
+    "description": "A single integer",
+  },
+  {
+    "case_name":   "Simple 3",
+    "input":       "-42",
+    "score":       5,
+    "description": "A negative integer",
+  },
+  {
+    "case_name":   "Simple 4",
+    "input":       "-42 + 43",
+    "score":       5,
+    "description": "Simple addition",
+  },
+  {
+    "case_name":   "Invalid Simple 1",
+    "input":       "-14 +",
+    "score":       5,
+    "description": "Missing a second operand",
+  },
+  {
+    "case_name":   "Invalid Simple 2",
+    "input":       "+ 36",
+    "score":       5,
+    "description": "Missing initial operand",
+  },
+  {
+    "case_name":   "Invalid Simple 3",
+    "input":       "3990 - 360",
+    "score":       5,
+    "description": "Incorrect operator",
+  },
+  {
+    "case_name":   "Invalid Long 1",
+    "input":       "10 + 20 + 30 + 40 + + 50 + 60",
+    "score":       5,
+    "description": "Putting 2 plus signs in a row",
+  },
+  {
+    "case_name":   "Invalid Long 2",
+    "input":       "10 + 20 + 30 + 40 + 50 + 60 70 + 80 + 90",
+    "score":       5,
+    "description": "Putting two integers in a row",
+  },
+  {
+    "case_name":   "Invalid Long 3",
+    "input":       "10 + 20 + 30 + 40 + 5 + 50 + 60 + 70 + +",
+    "score":       5,
+    "description": "Ending with double plus signs",
+    },
+    {
+    "case_name":   "Invalid Long 4",
+    "input":       "10 + 20 + 30 + 40 + 50 + 60 + 70 + 50+ 80 + 90",
+    "score":       5,
+    "description": "Forgetting a space between operator and operand",
+  },
+  {
+    "case_name":   "Pi",
+    "input":       "3 + 14 + -159 + 265 + 35 + 8979 + -32384 + -6 + 2 + 64 + 338 + -3 + 279 + 50 + 28 + -84 + 179 + 196",
+    "score":       5,
+    "description": "many integers, should result in negative sum",
+  },
+  {
+    "case_name":   "Zeros",
+    "input":       "0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0",
+    "score":       5,
+    "description": "many zeros added still results in zero",
+  },
+  {
+    "case_name":   "Consecutive Sum",
+    "input":       "0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20",
+    "score":       5,
+    "description": "Sum of all integers from 0 to 20, inclusive",
+  },
+  {
+    "case_name":   "Complex Invalid: Jabberwock",
+    "input":       "\\'Twas brillig, and the slithy toves    Did gyre and gimble in the wabe\\; All mimsy were the borogoves,    And the mome raths outgrabe.  \\<Beware the Jabberwock, my son    The jaws that bite, the claws that catch\\! Beware the Jubjub bird, and shun    The frumious Bandersnatch\\!\\>  He took his vorpal sword in hand\\;    Long time the manxome foe he sought- So rested he by the Tumtum tree,    And stood awhile in thought.  And, as in uffish thought he stood,    The Jabberwock, with eyes of flame, Came whiffling through the tulgey wood,    And burbled as it came\\!  One, two\\! One, two\\! And through and through    The vorpal blade went snicker-snack\\! He left it dead, and with its head    He went galumphing back.  \\<And hast thou slain the Jabberwock?    Come to my arms, my beamish boy\\! O frabjous day\\! Callooh\\! Callay\\!\\>    He chortled in his joy.  \\'Twas brillig, and the slithy toves    Did gyre and gimble in the wabe\\; All mimsy were the borogoves,    And the mome raths outgrabe.",
+    "score":       5,
+    "description": "Very long poem",
+  },
+]
