@@ -93,7 +93,125 @@ As stated above, the test cases that your autograder should run have been provid
 
 After completing the requisite setup, your autograder should run all of the tests.  After running each test, the autograder should compare the solution output (and exit status) against that of the student's submission.  Note that the students are allowed to have slightly different error messages, and your autograder should account for this.  The results should be stored in a .json file called `results.json`.  Below, we have included an example of this file when we run it on a buggy student submission.
 
-[TODO: insert results.json output here]
+```
+{
+    "tests": [
+        {
+            "case name": "Simple 1",
+            "input": "0",
+            "score": 0,
+            "max_score": 5,
+            "output": "A single digit...\nERROR: expected 0, got 1\n"
+        },
+        {
+            "case name": "Simple 2",
+            "input": "39",
+            "score": 5,
+            "max_score": 5,
+            "output": "A single integer...\n"
+        },
+        {
+            "case name": "Simple 3",
+            "input": "-42",
+            "score": 0,
+            "max_score": 5,
+            "output": "A negative integer...\nERROR: expected -42, got -41\n"
+        },
+        {
+            "case name": "Simple 4",
+            "input": "-42 + 43",
+            "score": 5,
+            "max_score": 5,
+            "output": "Simple addition...\n"
+        },
+        {
+            "case name": "Invalid Simple 1",
+            "input": "-14 +",
+            "score": 5,
+            "max_score": 5,
+            "output": "Missing a second operand...\n"
+        },
+        {
+            "case name": "Invalid Simple 2",
+            "input": "+ 36",
+            "score": 5,
+            "max_score": 5,
+            "output": "Missing initial operand...\n"
+        },
+        {
+            "case name": "Invalid Simple 3",
+            "input": "3990 - 360",
+            "score": 0,
+            "max_score": 5,
+            "output": "Incorrect operator...\nERROR: student code returned with zero exit status\n"
+        },
+        {
+            "case name": "Invalid Simple 4",
+            "input": " ",
+            "score": 0,
+            "max_score": 5,
+            "output": "No expression provided...\nERROR: student code did not handle error appropriately\n"
+        },
+        {
+            "case name": "Invalid Long 1",
+            "input": "10 + 20 + 30 + 40 + + 50 + 60",
+            "score": 5,
+            "max_score": 5,
+            "output": "Putting 2 plus signs in a row...\n"
+        },
+        {
+            "case name": "Invalid Long 2",
+            "input": "10 + 20 + 30 + 40 + 50 + 60 70 + 80 + 90",
+            "score": 5,
+            "max_score": 5,
+            "output": "Putting two integers in a row...\n"
+        },
+        {
+            "case name": "Invalid Long 3",
+            "input": "10 + 20 + 30 + 40 + 5 + 50 + 60 + 70 + +",
+            "score": 5,
+            "max_score": 5,
+            "output": "Ending with double plus signs...\n"
+        },
+        {
+            "case name": "Invalid Long 4",
+            "input": "10 + 20 + 30 + 40 + 50 + 60 + 70 + 50+ 80 + 90",
+            "score": 5,
+            "max_score": 5,
+            "output": "Forgetting a space between operator and operand...\n"
+        },
+        {
+            "case name": "Pi",
+            "input": "3 + 14 + -159 + 265 + 35 + 8979 + -32384 + -6 + 2 + 64 + 338 + -3 + 279 + 50 + 28 + -84 + 179 + 196",
+            "score": 0,
+            "max_score": 5,
+            "output": "many integers, should result in negative sum...\nERROR: expected -22204, got -22203\n"
+        },
+        {
+            "case name": "Zeros",
+            "input": "0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0",
+            "score": 0,
+            "max_score": 5,
+            "output": "many zeros added still results in zero...\nERROR: expected 0, got 1\n"
+        },
+        {
+            "case name": "Consecutive Sum",
+            "input": "0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20",
+            "score": 0,
+            "max_score": 5,
+            "output": "Sum of all integers from 0 to 20, inclusive...\nERROR: expected 210, got 211\n"
+        },
+        {
+            "case name": "Complex Invalid: Jabberwock",
+            "input": "\\'Twas brillig, and the slithy toves    Did gyre and gimble in the wabe\\; All mimsy were the borogoves,    And the mome raths outgrabe.  \\<Beware the Jabberwock, my son    The jaws that bite, the claws that catch\\! Beware the Jubjub bird, and shun    The frumious Bandersnatch\\!\\>  He took his vorpal sword in hand\\;    Long time the manxome foe he sought- So rested he by the Tumtum tree,    And stood awhile in thought.  And, as in uffish thought he stood,    The Jabberwock, with eyes of flame, Came whiffling through the tulgey wood,    And burbled as it came\\!  One, two\\! One, two\\! And through and through    The vorpal blade went snicker-snack\\! He left it dead, and with its head    He went galumphing back.  \\<And hast thou slain the Jabberwock?    Come to my arms, my beamish boy\\! O frabjous day\\! Callooh\\! Callay\\!\\>    He chortled in his joy.  \\'Twas brillig, and the slithy toves    Did gyre and gimble in the wabe\\; All mimsy were the borogoves,    And the mome raths outgrabe.",
+            "score": 5,
+            "max_score": 5,
+            "output": "Very long poem...\n"
+        }
+    ],
+    "output": ""
+}
+```
 
 Note that you should match this pretty close. The only fields that can have some difference is how you format the value of output for each test. The test output should always start with the test description with a **...\n** following that, but what is stored after that can vary. If a test does fail for a submission, you should put a descriptive error message there and include the word “error” somewhere. (We will be checking this, but have some leniency here. Don’t just put “ERROR: test case failed”.)
 
