@@ -236,4 +236,16 @@ Be sure to only import libraries you end up using!
 
 ### Submission
 
+Before submitting, please add the following as a triple-quoted comment at the top of `hw6.py`.
+- Full name
+- pennkey (e.g. afuji)
+- Time taken to complete the hw
+- Your answers to the following reflection questions
+1. The main challenge for this homework was to create a program from scratch.  What did you find difficult, and how did it inform your approach?  If it didn't pose a significant challenge, why?
+2. Did you use sys.argv or argparse to obtain command line arguments?  Justify your choice
+3. Did you put in more effort to organize code while you were programming your implementation, or did you go back and refactor your code?
+
+
+
 Please submit your `hw6.py` to Gradescope.  We will be performing manual examination of the code to check for style errors and ensure that none of the rules that were outlined in this specification were violated.
+
