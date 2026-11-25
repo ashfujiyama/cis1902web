@@ -66,7 +66,7 @@ You will need to ensure your file tree is exactly as shown in [Setup](#setup), o
 
 ### The Homework Assignment
 
-The homework assignment you will be autograding is a simple addition calculator.  The program takes in a mathematical expression, evaluates it, and then prints the results.  The program should be able to handle positive and negative integer operands, and catch any syntax errors such as:
+The homework assignment you will be autograding is a simple addition-only calculator.  The program takes in a mathematical expression, evaluates it, and then prints the results.  The program should be able to handle positive and negative integer operands, and catch any syntax errors such as:
 - invalid operands used (e.g. subtraction, multiplication, parentheses)
 - 2 plus signs happening in a row (e.g. `3 + 3 + + 6`)
 - 2 operands in a row (e.g. `3 9 + 42`)
