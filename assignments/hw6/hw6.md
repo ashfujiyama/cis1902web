@@ -114,6 +114,8 @@ You are only allowed to use the following imports:
 - subprocess
 - json
 
+Be sure to only import libraries you end up using!
+
 ### Submission
 
 Please submit your `hw6.py` to Gradescope.  We will be performing manual examination of the code to check for style errors and ensure that none of the rules that were outlined in this specification were violated.
