@@ -5,7 +5,7 @@ description: >-
     Homework 6: "Autograder"
 active_tab: homework
 parent: Assignments
-nav_order: 4
+nav_order: 9
 nav_exclude: false
 search_exclude: false
 ---
