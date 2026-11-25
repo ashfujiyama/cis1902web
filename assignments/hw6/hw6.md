@@ -91,7 +91,7 @@ As stated above, the test cases that your autograder should run have been provid
 
 ### Output Format
 
-After completing the requisite setup, your autograder should run all of the tests.  After running each test, the autograder should compare the solution output (and exit status) against that of the student's submission.  Note that the students are allowed to have slightly different error messages, and your autograder should account for this.  The results should be stored in a .json file called `results.json`.  Below, we have included an example of this file when we run it on a buggy student submission.
+After completing the requisite setup, your autograder should run all of the tests.  After running each test, the autograder should compare the solution output (and exit status) against that of the student's submission.  Note that the students are allowed to have slightly different error messages, and your autograder should account for this.  The results should be stored in a .json file called `results.json`.  Below, we have included an example of this file when we run it on a buggy student submission found in `submissions/Acerola/`.
 
 ```
 {
