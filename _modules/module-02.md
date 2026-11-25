@@ -12,7 +12,7 @@ Nov 16
 : [Autograder](../lectures/lec11.pdf)
 
 Nov 23
-: [Autograder Pt. 2](#)
+: [No Class](#)
 
 Nov 30
 : [Python Interview Techniques](#)
